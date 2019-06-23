@@ -11,6 +11,41 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Course newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Course query()
  * @mixin \Eloquent
+ * @property int $id
+ * @property int $teacher_id
+ * @property int $category_id
+ * @property int $level_id
+ * @property string $name
+ * @property string $description
+ * @property string $slug
+ * @property string|null $picture
+ * @property string $status
+ * @property int $previous_approved
+ * @property int $previous_rejected
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property-read \App\Category $category
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Goal[] $goals
+ * @property-read \App\Level $level
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Requirement[] $requirements
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Review[] $reviews
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Student[] $students
+ * @property-read \App\Teacher $teacher
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereLevelId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course wherePicture($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course wherePreviousApproved($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course wherePreviousRejected($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereTeacherId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereUpdatedAt($value)
  */
 class Course extends Model
 {
