@@ -77,7 +77,7 @@ class RegisterController extends Controller
       {
           Student::create([
               'user_id' => $user->id
-           
+
           ]);
           return redirect('/');
       }

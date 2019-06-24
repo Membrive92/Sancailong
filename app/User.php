@@ -87,7 +87,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    public static function navigation(){
+        return auth()->check() ? auth()->user()->role->name : 'guest';
+    }
     public function role(){
         return $this->belongsTo(Role::class);
     }
