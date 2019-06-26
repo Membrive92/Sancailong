@@ -1,8 +1,10 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Hind+Vadodara");
 
 // Variables
 @import 'variables';
+
+@import "card";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -32,7 +34,7 @@ header .navbar-laravel {
     background-color: $app-bg-color;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     .nav-link, .navbar-brand {
-        color: #fece00 !important;
+        color: #feda05 !important;
     }
 }
 
