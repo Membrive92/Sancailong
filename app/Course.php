@@ -57,6 +57,11 @@ class Course extends Model
         return "/images/courses/" . $this->picture;
     }
 
+    // con este metodo utilizamos el slug para camuflar la ruta
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
     public function category(){
         return $this->belongsTo(Category::class)->select('id','name');
     }
