@@ -27,6 +27,8 @@ class CourseController extends Controller
 
        ])->withCount(['students','reviews'])->get();
 
-       dd($course);
+         $related =$course->relatedCourses();
+
+         return view('courses.detail',compact('course','related'));
     }
 }

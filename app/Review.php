@@ -28,7 +28,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Review extends Model
 {
+
+    // Permite la introduccion masiva de datos
     protected $fillable = ['course_id', 'user_id','rating', 'comment'];
+
+    //Relaciones
     public function course(){
         return $this->belongsTo(Course::class);
     }

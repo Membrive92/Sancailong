@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Cashier\Billable;
 
 /**
  * App\User
@@ -51,7 +52,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    // Billable es de laravel cashier que nos aporta los metodos a la hora del pago
+    use Notifiable, Billable;
     protected static function boot () {
         parent::boot();
         static::creating(function (User $user) {

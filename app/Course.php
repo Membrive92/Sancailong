@@ -53,6 +53,11 @@ class Course extends Model
     const PENDING = 2;
     const  REJECTED = 3;
 
+    // se utiliza para que cuente el numero de criticas y estudiantes relacionados
+    protected $withCount =['students','reviews'];
+
+
+// para hacer el conteo que especificamos en la consulta
     public function pathAttachment () {
         return "/images/courses/" . $this->picture;
     }
@@ -62,6 +67,9 @@ class Course extends Model
         return 'slug';
     }
 
+
+
+    //Relaciones
     public function category(){
         return $this->belongsTo(Category::class)->select('id','name');
     }
@@ -85,11 +93,23 @@ class Course extends Model
         return $this->belongsTo(Teacher::class);
     }
 
+
+
+    //obtengo la media de las valoraciones
     public function getRatingAttribute(){
         return $this->reviews->avg('rating');
     }
 
 
+    //muestra los cursos de la misma categoria
+
+    public function relatedCourses() {
+            return Course::with('reviews')->whereCategoryId($this->category->id)
+                ->where('id','!=',$this->id)
+                ->latest()
+                ->limit(6)
+                ->get();
+    }
 
 
 }
