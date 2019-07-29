@@ -9,10 +9,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.btn-google {
-    background-color: #EF403B;
-    color: #fff;
-}
 
 
 body {
@@ -55,6 +51,8 @@ header .navbar-laravel {
     color: #fff;
 }
 
+
+
 .btn-more-info-course {
     background-color: #F3AF59;
     color: #fff;
@@ -67,7 +65,7 @@ header .navbar-laravel {
 
 .btn-course, .btn-course:hover {
     background-color: $app-bg-color;
-    color: #fff;
+    color: #fece00;
 }
 
 .card-header {
@@ -106,4 +104,7 @@ header .navbar-laravel {
 .bg-light {
     border: 1px solid $app-bg-color;
     text-align: center;
+}
+.subscribtions{
+    margin-left: 1%;
 }

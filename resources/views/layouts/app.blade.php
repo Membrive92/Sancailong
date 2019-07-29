@@ -21,7 +21,7 @@
           rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet" >
 
-
+    @stack('styles')
 </head>
 <body>
     @include('partials.navigation')
@@ -29,7 +29,6 @@
     @yield('jumbotron')
 
     <div id="app">
-         <stripe-form></stripe-form>
             <main class="py-4">
                 @if(session('message'))
                     <div class="row justify-content-center">
@@ -48,5 +47,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @stack('scripts')
 </body>
 </html>

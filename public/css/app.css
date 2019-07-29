@@ -11169,11 +11169,6 @@ a.text-dark:focus {
   }
 }
 
-.btn-google {
-  background-color: #EF403B;
-  color: #fff;
-}
-
 body {
   font-family: "Hind Vadodara", sans-serif;
 }
@@ -11227,7 +11222,7 @@ header .navbar-laravel .navbar-brand {
 .btn-course,
 .btn-course:hover {
   background-color: #000000;
-  color: #fff;
+  color: #fece00;
 }
 
 .card-header {
@@ -11268,5 +11263,9 @@ header .navbar-laravel .navbar-brand {
 .bg-light {
   border: 1px solid #000000;
   text-align: center;
+}
+
+.subscribtions {
+  margin-left: 1%;
 }
 
