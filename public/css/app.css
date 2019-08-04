@@ -11177,6 +11177,10 @@ main {
   min-height: 87vh;
 }
 
+img {
+  size: 200px;
+}
+
 .footer {
   width: 100%;
   background-color: #4c515c;
@@ -11263,9 +11267,5 @@ header .navbar-laravel .navbar-brand {
 .bg-light {
   border: 1px solid #000000;
   text-align: center;
-}
-
-.subscribtions {
-  margin-left: 1%;
 }
 

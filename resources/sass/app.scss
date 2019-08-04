@@ -18,6 +18,9 @@ body {
 main {
     min-height: 87vh;
 }
+img{
+    size:200px;
+}
 
 .footer {
     width: 100%;
@@ -104,7 +107,4 @@ header .navbar-laravel {
 .bg-light {
     border: 1px solid $app-bg-color;
     text-align: center;
-}
-.subscribtions{
-    margin-left: 1%;
 }

@@ -27,4 +27,8 @@ class CoursePolicy
         return ! $course->students->contains($user->student->id);
     }
 
+    // Si el estudiante aun no ha hecho una valoracion , podra hacerla
+    public function  review (User $user, Course $course){
+        return ! $course->reviews->contains('user_id',$user->id);
+    }
 }

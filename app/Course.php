@@ -96,7 +96,7 @@ class Course extends Model
 
 
     //obtengo la media de las valoraciones
-    public function getRatingAttribute(){
+    public function getCustomRatingAttribute(){
         return $this->reviews->avg('rating');
     }
 

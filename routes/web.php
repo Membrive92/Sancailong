@@ -22,9 +22,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware' => ['auth']], function () {
 Route::group(['prefix' => 'courses'], function (){
+
+    Route::get('/subscribed', 'CourseController@subscribed')->name('courses.subscribed');
+    Route::get('/{course}/inscribe','CourseController@inscribe')
+        ->name('courses.inscribe');
+    Route::post('/add_review', 'CourseController@addReview')->name('courses.add_review');
     Route::get('/{course}','CourseController@show')->name('courses.detail');
 });
+});
+
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'subscriptions'], function () {
         Route::get('/plans', 'SubscriptionController@plans')

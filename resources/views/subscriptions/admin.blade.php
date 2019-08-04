@@ -7,8 +7,8 @@
 @endsection
 
 @section('content')
-    <div class="subscribtions pl-5 pr-5"></div>
-       <div class="row justify-content-around">
+    <div class="pl-5 pr-5"></div>
+       <div class="ml-0 row justify-content-center">
            <table class="table table-hover table-dark text-warning">
                <thead>
                <tr>

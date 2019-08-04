@@ -79,8 +79,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-
+ // con este metodo accedemos a la imagen que tiene el usuario en el directorio publico de la aplicacion
+   public function pathAttachment(){
+       return "/images/users/" . $this->picture;
+   }
     /**
      * The attributes that should be cast to native types.
      *

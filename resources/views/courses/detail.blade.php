@@ -10,6 +10,8 @@
             @include('partials.courses.goals', ['goals' => $course->goals])
             @include('partials.courses.requirements', ['requirements' => $course->requirements])
             @include('partials.courses.description' ,['description' => $course->description])
+            @include('partials.courses.form_review')
         </div>
+        @include('partials.courses.reviews')
     </div>
 @endsection
