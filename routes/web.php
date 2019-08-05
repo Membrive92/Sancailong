@@ -55,6 +55,10 @@ Route::group(["prefix" => "profile", "middleware" => ["auth"]], function() {
     Route::put('/', 'ProfileController@update')->name('profile.update');
 });
 
+Route::group(['prefix' => "solicitude"], function() {
+    Route::post('/teacher', 'SolicitudeController@teacher')->name('solicitude.teacher');
+});
+
 
 
 

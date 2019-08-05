@@ -83,14 +83,8 @@ class User extends Authenticatable
    public function pathAttachment(){
        return "/images/users/" . $this->picture;
    }
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
+
     public static function navigation(){
         return auth()->check() ? auth()->user()->role->name : 'guest';
     }
