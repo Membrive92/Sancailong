@@ -50,20 +50,24 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
+Route::group(['prefix' => "solicitude"], function() {
+    Route::post('/teacher', 'SolicitudeController@teacher')->name('solicitude.teacher');
+});
 Route::group(["prefix" => "profile", "middleware" => ["auth"]], function() {
     Route::get('/', 'ProfileController@index')->name('profile.index');
     Route::put('/', 'ProfileController@update')->name('profile.update');
 });
 
-Route::group(['prefix' => "solicitude"], function() {
-    Route::post('/teacher', 'SolicitudeController@teacher')->name('solicitude.teacher');
+
+
+Route::group(['prefix' => "teacher", "middleware" => ["auth"]], function() {
+    Route::get('/courses', 'TeacherController@courses')->name('teacher.courses');
+    Route::get('/students', 'TeacherController@students')->name('teacher.students');
 });
 
 
 
-
-
-Route::get('/images/{path}/{attachment}', function($path, $attachment) {
+    Route::get('/images/{path}/{attachment}', function($path, $attachment) {
     $file = sprintf('storage/%s/%s', $path, $attachment);
     // comprobamos con laravel que un archivo existe
     if(File::exists($file)) {

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Course
@@ -53,11 +54,16 @@ class Course extends Model
     const PENDING = 2;
     const  REJECTED = 3;
 
+    // con esto podemos utilizar los borrados logicos determinados en la base de datos para no perder
+    // informacion a la hora de hacer pruebas con los cursos
+    use SoftDeletes;
+
+
     // se utiliza para que cuente el numero de criticas y estudiantes relacionados
     protected $withCount =['students','reviews'];
 
 
-// para hacer el conteo que especificamos en la consulta
+       // ruta de la imagen de los cursos
     public function pathAttachment () {
         return "/images/courses/" . $this->picture;
     }
@@ -96,20 +102,12 @@ class Course extends Model
 
 
     //obtengo la media de las valoraciones
+    // a la hora de llamarlo el metodo debe separarse por un guion
     public function getCustomRatingAttribute(){
         return $this->reviews->avg('rating');
     }
 
 
-    //muestra los cursos de la misma categoria
-
-    public function relatedCourses() {
-            return Course::with('reviews')->whereCategoryId($this->category->id)
-                ->where('id','!=',$this->id)
-                ->latest()
-                ->limit(6)
-                ->get();
-    }
 
 
 }
