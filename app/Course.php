@@ -58,12 +58,45 @@ class Course extends Model
     // informacion a la hora de hacer pruebas con los cursos
     use SoftDeletes;
 
+    protected $fillable=['teacher_id','name','description','picture','level_id','category_id','status'];
+
 
     // se utiliza para que cuente el numero de criticas y estudiantes relacionados
     protected $withCount =['students','reviews'];
 
+    public static function boot()
+    {
+        parent::boot();
+        static::saved(function (Course $course){
+                if ( ! \App::runningInConsole()) {
+                    if ( request('requirements')) {
+                        foreach (request('requirements') as $key => $requirement_input) {
+                            if ($requirement_input) {
+                                Requirement::updateOrCreate(['id' => request('requirement_id'. $key)], [
+                                    'course_id' => $course->id,
+                                    'requirement' => $requirement_input
+                                ]);
+                            }
+                        }
+                    }
 
-       // ruta de la imagen de los cursos
+                    if(request('goals')) {
+                        foreach(request('goals') as $key => $goal_input) {
+                            if( $goal_input) {
+                                Goal::updateOrCreate(['id' => request('goal_id'.$key)], [
+                                    'course_id' => $course->id,
+                                    'goal' => $goal_input
+                                ]);
+                            }
+                        }
+                    }
+                }
+            });
+
+
+    }
+
+    // ruta de la imagen de los cursos
     public function pathAttachment () {
         return "/images/courses/" . $this->picture;
     }

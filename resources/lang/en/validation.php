@@ -145,6 +145,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'requirements.0' => "requisito 1"
+    ],
 
 ];

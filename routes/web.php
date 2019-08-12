@@ -21,16 +21,25 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth']], function () {
 Route::group(['prefix' => 'courses'], function (){
+Route::group(['middleware' => ['auth']], function () {
+
 
     Route::get('/subscribed', 'CourseController@subscribed')->name('courses.subscribed');
     Route::get('/{course}/inscribe','CourseController@inscribe')
         ->name('courses.inscribe');
     Route::post('/add_review', 'CourseController@addReview')->name('courses.add_review');
-    Route::get('/{course}','CourseController@show')->name('courses.detail');
+
+    Route::get('/create','CourseController@create')
+        ->name('courses.create')->middleware([sprintf("role:%s", \App\Role::TEACHER)]);
+    Route::post('/store', 'CourseController@store')->name('courses.store')
+        ->middleware(sprintf("role:%s", \App\Role::TEACHER));
+
+   Route::put('/{course}/update','CourseController@update')->name('course.update')
+       ->middleware(sprintf("role:%s", \App\Role::TEACHER));
+
 });
+    Route::get('/{course}','CourseController@show')->name('courses.detail');
 });
 
 Route::group(['middleware' => ['auth']], function () {

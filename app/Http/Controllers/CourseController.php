@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Course;
+use App\Helpers\Helper;
+use App\Http\Requests\CourseRequest;
 use App\Mail\NewStudentInCourse;
 use App\Review;
+
 
 class CourseController extends Controller
 {
@@ -27,9 +29,9 @@ class CourseController extends Controller
             },
             'reviews.user', 'teacher'
 
-        ])->withCount(['students', 'reviews'])->get();
+        ])->get();
 
-        $related = $course->relatedCourses();
+
 
         return view('courses.detail', compact('course', 'related'));
     }
@@ -66,4 +68,21 @@ class CourseController extends Controller
        ]);
        return back()->with('message',['success' ,__('Agradecemos tu valoracion')]);
     }
+
+    public function create(){
+       $course = new Course;
+       $btnText = __("Enviar curso para revision");
+       return view('courses.form', compact('course', 'btnText'));
+    }
+
+    // con este metedo almaceno los cursos y con merge añado variables nuevas para añadir informacion
+    public function store (CourseRequest $course_request) {
+        $picture = Helper::uploadFile('picture', 'courses');
+        $course_request->merge(['picture' => $picture]);
+        $course_request->merge(['teacher_id' => auth()->user()->teacher->id]);
+        $course_request->merge(['status' => Course::PENDING]);
+        Course::create($course_request->input());
+        return back()->with('message', ['success', __('Curso enviado correctamente, recibirá un correo con cualquier información')]);
+    }
+
 }
