@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 /**
  * App\Course
@@ -64,9 +65,18 @@ class Course extends Model
     // se utiliza para que cuente el numero de criticas y estudiantes relacionados
     protected $withCount =['students','reviews'];
 
+
+// eventos
     public static function boot()
     {
         parent::boot();
+
+        // añadir el slug
+        static::saving(function(Course $course) {
+            if( ! \App::runningInConsole() ) {
+                $course->slug = Str::slug($course->name, "-");
+            }
+        });
         static::saved(function (Course $course){
                 if ( ! \App::runningInConsole()) {
                     if ( request('requirements')) {

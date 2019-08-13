@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use App\Student;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
+    // con este metodo muestro los cursos que ha creado el usuario utilizando la relacion accedo
+    //a los estudiantes ,categorias y valoraciones
+    public function courses(){
+        $courses = Course::withCount(['students'])->with('category','reviews')
+            ->whereTeacherId(auth()->user()->teacher->id)->paginate(12);
+        return view('teachers.courses', compact('courses'));
+    }
     public function students(){
         // utilizo el querybuilder de laravel para hacer la consulta
      $students = Student::with('user','courses.reviews')
