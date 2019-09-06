@@ -72,7 +72,7 @@ class Course extends Model
         parent::boot();
 
         // añadir el slug
-        static::saving(function(Course $course) {
+        static::creating(function(Course $course) {
             if( ! \App::runningInConsole() ) {
                 $course->slug = Str::slug($course->name, "-");
             }

@@ -36,12 +36,20 @@ Route::group(['prefix' => 'courses'], function () {
 
             Route::get('/create', 'CourseController@create')
                 ->name('courses.create');
+
             Route::post('/store', 'CourseController@store')
                 ->name('courses.store');
+
+
             Route::put('/{course}/update', 'CourseController@update')
                 ->name('courses.update');
+
             Route::get('/{slug}/edit', 'CourseController@edit')
                 ->name('courses.edit');
+
+            Route::put('/{course}/update', 'CourseController@update')
+                ->name('courses.update');
+
             Route::delete('/{course}/destroy', 'CourseController@destroy')
                 ->name('courses.destroy');
 

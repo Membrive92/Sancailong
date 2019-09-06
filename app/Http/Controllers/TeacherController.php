@@ -12,7 +12,7 @@ class TeacherController extends Controller
     //a los estudiantes ,categorias y valoraciones
     public function courses(){
         $courses = Course::withCount(['students'])->with('category','reviews')
-            ->whereTeacherId(auth()->user()->teacher->id)->paginate(12);
+            ->whereTeacherId(auth()->user()->teacher->id)->paginate(7);
         return view('teachers.courses', compact('courses'));
     }
     public function students(){
