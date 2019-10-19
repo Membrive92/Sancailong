@@ -114,4 +114,6 @@ class CourseController extends Controller
             return back()->with('message', ['danger', __("Error al eliminar el curso")]);
         }
     }
+
+
 }

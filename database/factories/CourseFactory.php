@@ -13,7 +13,7 @@ $factory->define(Course::class, function (Faker $faker) {
         'category_id' => \App\Category::all()->random()->id,
         'level_id' => \App\Level::all()->random()->id,
         'name' => $name,
-        'slug' => str_slug($name, '-'),
+        'slug' => Str::Slug($name, '-'),
         'description' => $faker->paragraph,
         'picture' => \Faker\Provider\Image::image(storage_path() . '/app/public/courses', 600, 350, 'sports', false),
         'status' => $status,

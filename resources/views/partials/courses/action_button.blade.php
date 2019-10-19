@@ -11,7 +11,7 @@
                         <i class="fa fa-bolt"></i> {{ __("Inscribirme al curso") }}
                     </a>
                 @else
-                    <a class="btn btn-subscribe btn-bottom btn-block" href="#">
+                    <a class="btn btn-subscribe btn-bottom btn-block" href="">
                         <i class="fa fa-bolt"></i> {{ __("Inscrito") }}
                     </a>
                 @endcan

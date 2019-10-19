@@ -1,4 +1,4 @@
-<div class="col-12 pt-0 mt-0">
+<div class="col-12 pt-0 mt-4">
     <h2 class="text-muted ">{{ __("Metas del curso") }}</h2>
     <hr>
 </div>

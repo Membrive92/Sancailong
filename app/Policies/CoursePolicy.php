@@ -26,6 +26,10 @@ class CoursePolicy
         //comprueba dentro de la relacion que tenemos, si alguno de estos estudiantes, es el del usuario
         return ! $course->students->contains($user->student->id);
     }
+    public function  watch (User $user, Course $course){
+        //con esto permito que el usuario que este inscrito al video, pueda verlo
+        return $course->students->contains($user->id) ;
+    }
 
     // Si el estudiante aun no ha hecho una valoracion , podra hacerla
     public function  review (User $user, Course $course){
