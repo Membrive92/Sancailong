@@ -49,6 +49,9 @@ use Laravel\Cashier\Billable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereStripeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereTrialEndsAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
+ * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Cashier\Subscription[] $subscriptions
+ * @property-read int|null $subscriptions_count
  */
 class User extends Authenticatable
 {

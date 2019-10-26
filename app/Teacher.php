@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Teacher whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Teacher whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Teacher whereUserId($value)
+ * @property-read int|null $courses_count
  */
 class Teacher extends Model
 {

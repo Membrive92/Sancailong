@@ -96,6 +96,21 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="form-group ml-3 mr-2">
+                        <div class="col-md-6 offset-4">
+                            <input
+                                    type="file"
+                                    class="custom-file-input{{ $errors->has('video') ? ' is-invalid' : ''}}"
+                                    id="video"
+                                    name="video"
+                            />
+                            <label
+                                    class="custom-file-label" for="picture"
+                            >
+                                {{ __("Escoge el video del curso") }}
+                            </label>
+                        </div>
+                    </div>
 
                         <div class="form-group row">
                             <label

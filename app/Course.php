@@ -48,6 +48,20 @@ use Illuminate\Support\Str;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereTeacherId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereUpdatedAt($value)
+ * @property string|null $video_name
+ * @property string|null $url
+ * @property-read mixed $custom_rating
+ * @property-read int|null $goals_count
+ * @property-read int|null $requirements_count
+ * @property-read int|null $reviews_count
+ * @property-read int|null $students_count
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\Course onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Course whereVideoName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Course withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Course withoutTrashed()
  */
 class Course extends Model
 {
@@ -110,6 +124,8 @@ class Course extends Model
     public function pathAttachment () {
         return "/images/courses/" . $this->picture;
     }
+
+
 
     // con este metodo utilizamos el slug para camuflar la ruta
     public function getRouteKeyName(){

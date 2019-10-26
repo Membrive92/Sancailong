@@ -80,7 +80,9 @@ class CourseController extends Controller
     public function store(CourseRequest $course_request)
     {
         $picture = Helper::uploadFile('picture', 'courses');
+        $video = Helper::uploadFile('video', 'video');
         $course_request->merge(['picture' => $picture]);
+        $course_request->merge(['video' => $video]);
         $course_request->merge(['teacher_id' => auth()->user()->teacher->id]);
         $course_request->merge(['status' => Course::PENDING]);
         Course::create($course_request->input());
@@ -103,6 +105,7 @@ class CourseController extends Controller
             $picture = Helper::uploadFile( "picture", 'courses');
             $course_request->merge(['picture' => $picture]);
         }
+
         $course->fill($course_request->input())->save();
         return back()->with('message', ['success', __('Curso actualizado')]);
     }
