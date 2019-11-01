@@ -7,6 +7,7 @@ use App\Helpers\Helper;
 use App\Http\Requests\CourseRequest;
 use App\Mail\NewStudentInCourse;
 use App\Review;
+use Illuminate\Support\Facades\Storage;
 
 
 class CourseController extends Controller
@@ -82,7 +83,7 @@ class CourseController extends Controller
         $picture = Helper::uploadFile('picture', 'courses');
         $video = Helper::uploadFile('video', 'video');
         $course_request->merge(['picture' => $picture]);
-        $course_request->merge(['video' => $video]);
+        $course_request->merge(['url' => $video]);
         $course_request->merge(['teacher_id' => auth()->user()->teacher->id]);
         $course_request->merge(['status' => Course::PENDING]);
         Course::create($course_request->input());

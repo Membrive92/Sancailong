@@ -73,7 +73,7 @@ class Course extends Model
     // informacion a la hora de hacer pruebas con los cursos
     use SoftDeletes;
 
-    protected $fillable=['teacher_id','name','description','picture','level_id','category_id','status'];
+    protected $fillable=['teacher_id','name','description','picture','level_id','category_id','status','url'];
 
 
     // se utiliza para que cuente el numero de criticas y estudiantes relacionados
@@ -124,6 +124,10 @@ class Course extends Model
     public function pathAttachment () {
         return "/images/courses/" . $this->picture;
     }
+    public function Video_pathAttachment () {
+        return   "https://sancailong.it/storage/video/". $this->url;
+    }
+
 
 
 
