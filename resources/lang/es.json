@@ -1,3 +1,31 @@
 {
-  "Socialite": "Entrar con Socialite"
+  "Socialite": "Iniciar sesión con Redes sociales",
+  "Idioma": "Idioma",
+  "Iniciar sesión":"Iniciar Sesión",
+  "Registrarme": "Registrarme",
+  "Cerrar sesión": "Cerrar Sesión",
+  "Login": "Iniciar sesión",
+  "E-Mail Address": "Correo Electronico",
+  "Password": "Contraseña",
+  "Remember Me": "Recuerdame",
+  "Forgot Your Password?": "¿Has olvidado tu contraseña?",
+  "Español": "Español",
+  "Inglés": "Ingles",
+  "Mi perfil": "Perfil",
+  "Mis suscripciones": "Subscripciones",
+  "Mis facturas": "Facturas",
+  "Mis cursos": "Mis Cursos",
+  "Cursos desarrollados por mi": "Cursos desarrollados por mi",
+  "Crear curso": "Crear Curso",
+  "Información del curso": "Información del curso",
+  "Verify Your Email Address": "Verifica tu dirreción de correo",
+  "A fresh verification link has been sent to your email address": "Se ha enviado un enlace para verificar tu dirrecion de correo",
+  "Before proceeding, please check your email for a verification link":"Antes de continuar, por favor, revisa tu correo electronico para verificar el enlace" ,
+  "If you did not receive the email":"Si no recibiste el email" ,
+  "click here to request another": "Haz click aqui para enviar otra"
+
+
+
+
+
 }

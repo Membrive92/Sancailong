@@ -73,7 +73,12 @@ class CourseController extends Controller
     public function create()
     {
         $course = new Course;
-        $btnText = __("Enviar curso para revision");
+        if (session('applocale') == 'es'){
+            $btnText = __("Enviar curso para revision");
+        } else {
+            $btnText = __("Send course for review");
+        }
+
         return view('courses.form', compact('course', 'btnText'));
     }
 
@@ -94,7 +99,13 @@ class CourseController extends Controller
     public function edit ($slug) {
         $course = Course::with(['requirements', 'goals'])->withCount(['requirements', 'goals'])
             ->whereSlug($slug)->first();
-        $btnText = __("Actualizar curso");
+
+        if (session('applocale') == 'es'){
+            $btnText = __("Actualizar curso");
+        } else {
+            $btnText = __("Upload course");
+        }
+
         return view('courses.form', compact('course', 'btnText'));
     }
 
