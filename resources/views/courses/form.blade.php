@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('jumbotron')
-    @include('partials.jumbotron', ['title' => 'Dar de alta un nuevo curso', 'icon' => 'edit'])
+    @include('partials.jumbotron', ['title' => __("Dar de alta un nuevo curso"), 'icon' => 'edit'])
 @endsection
 
 @section('content')

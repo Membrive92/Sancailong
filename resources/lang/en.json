@@ -13,7 +13,7 @@
   "Mi perfil": "Profile",
   "Mis suscripciones": "Subscribtions",
   "Mis facturas": "Invoices",
-  "Mis cursos": "My Courses",
+  "Mis cursos": "Courses",
   "Cursos desarrollados por mi": "Courses developed by me",
   "Crear curso": "Create Course",
   "Información del curso": "Course's Information",
@@ -36,5 +36,10 @@
   "Aprobar": "Aprove",
   "Rechazar": "Reject",
   "Todavía no estás suscrito a ningún curso": "You are not subscribed to any courses yet",
-  "Configura tu perfil": "Manage your profile"
+  "Configura tu perfil": "Manage your profile",
+  "Gestionar Horario": "Manage schedule",
+  "Gestiona tu horario": "Manage your schedule",
+  "Guardar Cambios": "Save changes",
+  "Dar de alta un nuevo curso": "Register a new course"
+
 }

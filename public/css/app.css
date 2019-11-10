@@ -83,8 +83,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  background-image: url("/images/sancailong-back.jpg");
-
 }
 
 html {
@@ -108,7 +106,6 @@ section {
 }
 
 body {
-
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-size: 0.9rem;
@@ -11174,6 +11171,7 @@ a.text-dark:focus {
 
 body {
   font-family: "Hind Vadodara", sans-serif;
+  background: url("/public/images/sancailong-back.jpg");
 }
 
 main {
@@ -11271,6 +11269,4 @@ header .navbar-laravel .navbar-brand {
   border: 1px solid #000000;
   text-align: center;
 }
-
-
 

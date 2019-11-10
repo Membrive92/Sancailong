@@ -108,6 +108,14 @@ Route::group(['prefix' => "admin", "middleware" => ['auth', sprintf("role:%s", \
 });
 
 
+Route::group(['prefix' => "teacher", "middleware" => ['auth', sprintf("role:%s", \App\Role::TEACHER)]], function() {
+       Route::get('/schedule','ScheduleController@edit')->name('teacher.schedule');
+
+});
+
+
+
+
 Route::get('/images/{path}/{attachment}', function ($path, $attachment) {
     $file = sprintf('storage/%s/%s', $path, $attachment);
     // comprobamos con laravel que un archivo existe
