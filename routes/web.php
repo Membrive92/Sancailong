@@ -110,6 +110,7 @@ Route::group(['prefix' => "admin", "middleware" => ['auth', sprintf("role:%s", \
 
 Route::group(['prefix' => "teacher", "middleware" => ['auth', sprintf("role:%s", \App\Role::TEACHER)]], function() {
        Route::get('/schedule','ScheduleController@edit')->name('teacher.schedule');
+    Route::post('/schedule','ScheduleController@store');
 
 });
 
