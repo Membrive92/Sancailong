@@ -114,7 +114,8 @@ Route::group(['prefix' => "teacher", "middleware" => ['auth', sprintf("role:%s",
 
 });
 
-
+Route::get('/appointments/create', 'AppointmentController@create')->name('appointment.create');
+Route::post('/appointmets','AppointmentController@store');
 
 
 Route::get('/images/{path}/{attachment}', function ($path, $attachment) {

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head >
@@ -24,29 +25,31 @@
     @stack('styles')
 </head>
 <body style="background-position: center; background-repeat: no-repeat; background-image:url('{{ asset('/images/sancailong-back.jpg')  }} ')" >
-    @include('partials.navigation')
+@include('partials.navigation')
 
-    @yield('jumbotron')
+@yield('jumbotron')
 
-    <div id="app">
-            <main class="py-4">
-                @if(session('message'))
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <div class="alert alert-{{ session('message')[0] }}">
-                                <h5 class="alert-heading">{{ __("Informacion") }}</h5>
-                                <p>{{ session('message')[1] }}</p>
-                            </div>
-                        </div>
+<div id="app">
+    <main class="py-4">
+        @if(session('message'))
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="alert alert-{{ session('message')[0] }}">
+                        <h5 class="alert-heading">{{ __("Informacion") }}</h5>
+                        <p>{{ session('message')[1] }}</p>
                     </div>
-                @endif
+                </div>
+            </div>
+        @endif
 
-                @yield('content')
-            </main>
-    </div>
+        @yield('content')
+    </main>
+</div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
-    @stack('scripts')
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" ></script>
+<script src="{{ asset('plugins/argon/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('plugins/argon/assets/js/argon.js/argon.min.js') }}"></script>
+@stack('scripts')
 </body>
 </html>

@@ -41,6 +41,15 @@
   "Gestiona tu horario": "Manage your schedule",
   "Guardar Cambios": "Save changes",
   "Dar de alta un nuevo curso": "Register a new course",
-  "Cambios guardados con éxito": "your schedule has been modify"
-
+  "Cambios guardados con éxito": "your schedule has been modify",
+  "Las horas del turno de mañana son inválidas para el ": "The morning schedule is wrong for ",
+  "Las horas del turno de tarde son inválidas para el ": "The afternoon schedule is wrong for ",
+  "Los cambios se han guardado pero:": "Your changes has been saved but: ",
+  "Día": "Day",
+  "Activo": "Active",
+  "Turno mañana": "Morning shift",
+  "Turno tarde": "afternoon shift",
+  "Reserva tu Cita": "Book your Class",
+  "Reservar Cita": "Book your Class",
+  "Registrar nueva cita": "Register new appointment"
 }
