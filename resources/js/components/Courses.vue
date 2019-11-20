@@ -1,15 +1,44 @@
-<template>
-    <div>
-        <div class="alert alert-primary text-center" v-if="processing">
-            <i class="fa fa-compass"></i> Procesando petición...
+<template class="text-warning">
+    <div class="text-warning">
+        <div class="alert text-warning alert-primary text-center " v-if="processing">
+            <i class="fa fa-compass text-warning"></i> Procesando petición
         </div>
-        <v-server-table ref="table" :columns="columns" :url="url" :options="options">
+        <v-server-table class="text-warning" ref="table" :columns="columns" :url="url" :options="options">
+            <div slot="activate_deactivate" slot-scope="props">
+                <button
+                        v-if="parseInt(props.row.status) === 1"
+                        type="button"
+                        class="btn btn-danger btn-block"
+                        @click="updateStatus(props.row, 3)"
+                >
+                    <i class="fa fa-ban"></i> {{ labels.reject }}
+                </button>
 
-
-            <div slot="status" slot-scope="props">
+                <button
+                        v-else
+                        type="button"
+                        class="btn btn-success btn-block"
+                        @click="updateStatus(props.row, 1)"
+                >
+                    <i class="fa fa-thumbs-up"></i> {{ labels.approve }}
+                </button>
+            </div>
+                  <!-- Esto nos permite cambiar los campos de estatus de base de datos a los nombres correspondientes en la funcion -->
+            <div class=" text-warning " slot="status" slot-scope="props">
                 {{ formattedStatus(props.row.status) }}
             </div>
 
+
+
+            <div class="text-warning" slot="filter__status" @change="filterByStatus">
+                <select class="form-control "  v-model="status">
+                    <option selected value="0">Selecciona una opcion</option>
+                    <option selected value="1">Publicado</option>
+                    <option selected value="2">Pendiente</option>
+                    <option selected value="3">Rechazado</option>
+                </select>
+
+            </div>
 
 
         </v-server-table>
@@ -105,5 +134,9 @@
 <style>
     .table-bordered>thead>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>tfoot>tr>td {
         text-align: center !important;
+        background: #272726;
+        color: #ffc31a;
+
+
     }
 </style>

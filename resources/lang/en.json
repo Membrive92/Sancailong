@@ -52,5 +52,20 @@
   "Reserva tu Cita": "Book your Class",
   "Reservar Cita": "Book your Class",
   "Registrar nueva cita": "Register new appointment",
-  "Seleccionar fecha": "Select date"
+  "Seleccionar fecha": "Select date",
+  "Activar/Desactivar": "Activate/Deactivate",
+  "Reachazar": "Reject",
+  "Administrar cursos": "Manage Courses",
+  "Publicado": "Published",
+  "Pendiente": "Pending",
+  "Rechazado": "Reject",
+  "Felicidades": "Congratulations!!",
+  "Curso Aprobado!": "Your Course has been approved!!",
+  "Tu curso :course ha sido aprobado y ya está publicado en la plataforma": "Your Course :course has been approved and published on the application",
+  "Gracias": "Thank you",
+  "Ir al curso": "Go to the course",
+  "Curso Rechazado!": "Course Rejected",
+  "Tu curso :course no ha sido aprobado en la plataforma": "Your course :course has not been approved on the application",
+  "Ir a la plataforma": "Go to the app",
+  "Lo sentimos": "it is a great shame"
 }
