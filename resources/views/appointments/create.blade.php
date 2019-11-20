@@ -1,6 +1,7 @@
 
 @extends('layouts.app')
 
+
 @section('jumbotron')
     @include('partials.jumbotron', ['title' => __("Reserva tu Cita"), 'icon' => 'book'])
 @endsection
@@ -13,7 +14,7 @@
                     <h3 class="mb-0">{{__("Registrar nueva cita")}}</h3>
                 </div>
                 <div class="col text-right">
-                    <a href="{{ url('patients') }}" class="btn btn-sm btn-default">
+                    <a href="" class="btn btn-sm btn-default">
                         Cancelar y volver
                     </a>
                 </div>
@@ -30,36 +31,31 @@
                 </div>
             @endif
 
-            <form action="{{ url('patients') }}" method="post">
+            <form action="" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="name">{{ __('Cursos') }}</label>
-                    <select name="" id="" class="form-control">
+                    <select name="course_id" id="course" class="form-control">
                     @foreach($courses as $course)
                         <option value="{{$course->id}}">{{$course->name}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="email">{{__('Profesor')}}</label>
-                    <select name="" id="" class="form-control"></select>
+                    <label for="name">{{'Profesor'}}</label>
+                    <input type="text" name="teacher_id" id="teacher" class="form-control" value="{{ old('name') }}" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="dni">{{__('Fecha')}}</label>
-                    <input type="text" name="dni" class="form-control datepicker" value="{{ old('dni') }}">
+                    <label for="Fecha">{{__('Fecha')}}</label>
+                    <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                        </div>
+                        <input class="form-control datepicker" placeholder="{{__("Seleccionar fecha")}}" type="text" value="">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="address">{{__('Hora de cita')}}</label>
-                    <input type="text" name="address" class="form-control" value="{{ old('address') }}">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Teléfono / móvil</label>
-                    <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
-                </div>
-                <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="text" name="password" class="form-control" value="{{ str_random(6) }}">
-                </div>
+
                 <button type="submit" class="btn btn-primary">
                     Guardar
                 </button>
@@ -67,3 +63,5 @@
         </div>
     </div>
 @endsection
+
+

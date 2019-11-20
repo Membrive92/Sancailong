@@ -164,6 +164,8 @@ class Course extends Model
 
 
 
+
+
     //obtengo la media de las valoraciones
     // a la hora de llamarlo el metodo debe separarse por un guion
     public function getCustomRatingAttribute(){

@@ -17,12 +17,22 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet" >
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="{{asset('assets/vendor/nucleo/css/nucleo.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <!-- Argon CSS -->
+    <link type="text/css" href="{{asset('assets/css/argon.css?v=1.1.0')}}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 
     @stack('styles')
+    @yield('unique_styles')
 </head>
 <body style="background-position: center; background-repeat: no-repeat; background-image:url('{{ asset('/images/sancailong-back.jpg')  }} ')" >
 @include('partials.navigation')
@@ -48,8 +58,16 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" ></script>
-<script src="{{ asset('plugins/argon/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ asset('plugins/argon/assets/js/argon.js/argon.min.js') }}"></script>
+<!-- Core -->
+<script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('assets/vendor/popper/popper.min.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/vendor/headroom/headroom.min.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+
+<!-- Argon JS -->
+<script src="{{asset('assets/js/argon.js?v=1.1.0')}}"></script>
 @stack('scripts')
+@yield('unique_scripts')
 </body>
 </html>

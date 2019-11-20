@@ -26,14 +26,17 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Teacher whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Teacher whereUserId($value)
  * @property-read int|null $courses_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Course[] $course
+ * @property-read int|null $course_count
  */
 class Teacher extends Model
 {
     protected $fillable = ['user_id'];
-    public function courses(){
-        return $this->belongsToMany(Course::class);
-    }
+
     public function user(){
         return $this->belongsTo(User::class)->select('id','role_id','name','email');
+    }
+    public function course(){
+        return $this->hasMany(Course::class);
     }
 }

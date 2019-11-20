@@ -113,10 +113,11 @@ Route::group(['prefix' => "teacher", "middleware" => ['auth', sprintf("role:%s",
     Route::post('/schedule','ScheduleController@store');
 
 });
-
-Route::get('/appointments/create', 'AppointmentController@create')->name('appointment.create');
-Route::post('/appointmets','AppointmentController@store');
-
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/appointments/create', 'AppointmentController@create')->name('appointment.create');
+    Route::post('/appointments', 'AppointmentController@store');
+    Route::get('/courses/{course}/teacher', 'AppointmentController@teachers');
+});
 
 Route::get('/images/{path}/{attachment}', function ($path, $attachment) {
     $file = sprintf('storage/%s/%s', $path, $attachment);

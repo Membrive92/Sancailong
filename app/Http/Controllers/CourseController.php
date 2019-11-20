@@ -7,6 +7,7 @@ use App\Helpers\Helper;
 use App\Http\Requests\CourseRequest;
 use App\Mail\NewStudentInCourse;
 use App\Review;
+use App\Teacher;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -129,6 +130,8 @@ class CourseController extends Controller
             return back()->with('message', ['danger', __("Error al eliminar el curso")]);
         }
     }
+
+
 
 
 }
