@@ -159,9 +159,9 @@
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         <script>
         let dt;
-        let modal = jQuery("#appModal");
-        jQuery(document).ready(function() {
-            dt = jQuery("#students-table").DataTable({
+        let modal = $("#appModal");
+        $(document).ready(function() {
+            dt = $("#students-table").DataTable({
                 pageLength: 5,
                 lengthMenu: [ 5, 10, 25, 50, 75, 100 ],
                 processing: true,
@@ -178,9 +178,9 @@
                     {data: 'actions'}
                 ]
             });
-            jQuery(document).on("click", '.btnEmail', function (e) {
+            $(document).on("click", '.btnEmail', function (e) {
                 e.preventDefault();
-                const id = jQuery(this).data('id');
+                const id = $(this).data('id');
                 modal.find('.modal-title').text('{{ __("Enviar mensaje") }}');
                 modal.find('#modalAction').text('{{ __("Enviar mensaje") }}').show();
                 let $form = $("<form id='studentMessage'></form>");
@@ -190,8 +190,8 @@
                 modal.modal();
             });
 
-            jQuery(document).on("click", "#modalAction", function (e) {
-                jQuery.ajax({
+            $(document).on("click", "#modalAction", function (e) {
+                $.ajax({
                     url: '{{ route('teacher.send_message_to_student') }}',
                     type: 'POST',
                     headers: {

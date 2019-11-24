@@ -11270,3 +11270,16 @@ header .navbar-laravel .navbar-brand {
   text-align: center;
 }
 
+.fm-video {
+  box-shadow: 0px 0px 6px 0px #0a0c0d;
+}
+
+.fm-video .vjs-play-progress,
+.fm-video .vjs-volume-level {
+  background: #ffd712;
+}
+
+.fm-video .vjs-slider {
+  background: #e0ff0e;
+}
+

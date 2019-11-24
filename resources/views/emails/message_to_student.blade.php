@@ -1,14 +1,14 @@
 @component('mail::message')
 
-    # {{ __("Nuevo mensaje") }}
+# {{ __("Nuevo mensaje") }}
 
-    {{ $text_message }}
+{{ $text_message }}
 
-    @component('mail::button', ['url' => url('/')])
-        {{ __("Ir a :app", ['app' => env('APP_NAME')]) }}
-    @endcomponent
+@component('mail::button', ['url' => url('/')])
+{{ __("Ir a :app", ['app' => env('APP_NAME')]) }}
+@endcomponent
 
-    {{ __("Gracias") }},<br>
-    {{ config('app.name') }}
+{{ __("Gracias") }},<br>
+{{ config('app.name') }}
 
 @endcomponent
