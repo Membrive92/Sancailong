@@ -28,9 +28,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $courses_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Course[] $course
  * @property-read int|null $course_count
+ * @property string $status
+ * @property int $previous_approved
+ * @property int $previous_rejected
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Teacher wherePreviousApproved($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Teacher wherePreviousRejected($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Teacher whereStatus($value)
  */
 class Teacher extends Model
 {
+
+
     protected $fillable = ['user_id'];
 
     public function user(){

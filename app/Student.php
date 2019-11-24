@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model
 {
+
+
     // asignacion de datos en masa
     protected $fillable = ['user_id', 'title'];
 

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Mail\CourseApproved;
 use App\Mail\CourseRejected;
+use App\Mail\TeacherApproved;
+use App\Mail\TeacherRejected;
+use App\Student;
+use App\Teacher;
 use App\VueTables\EloquentVueTables;
 use Illuminate\Http\Request;
 
@@ -15,6 +19,10 @@ class AdminController extends Controller
     public function courses(){
         return view('admin.courses');
     }
+
+
+
+
     public function coursesJson(){
         if (request()->ajax()){
 
@@ -25,6 +33,9 @@ class AdminController extends Controller
         }
         return abort(401);
     }
+
+
+
     public function updateCourseStatus () {
         if (\request()->ajax()) {
             $course = Course::find(\request('courseId'));
@@ -53,4 +64,7 @@ class AdminController extends Controller
         }
         return abort(401);
     }
+
+
+
 }

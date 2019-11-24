@@ -67,5 +67,14 @@
   "Curso Rechazado!": "Course Rejected",
   "Tu curso :course no ha sido aprobado en la plataforma": "Your course :course has not been approved on the application",
   "Ir a la plataforma": "Go to the app",
-  "Lo sentimos": "it is a great shame"
+  "Lo sentimos": "it is a great shame",
+    "Administrar Estudiantes": "Manage Students",
+    "Administrar Profesores": "Manage Teachers",
+    "Cerrar": "Close",
+    "Enviar mensaje": "Send message",
+    "Mensaje enviado correctamente": "Your message has been sent successfully",
+    "Ha ocurrido un error enviando el correo": "Runtime error has occurred processing the email",
+    "Mensaje de :": "Message from : ",
+    "Nuevo mensaje": "New message",
+    "Ir a :": "Go to : "
 }

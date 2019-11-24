@@ -29,6 +29,8 @@ Vue.component('stripe-form', StripeForm);
 import Courses from './components/Courses';
 Vue.component('courses-list', Courses);
 
+
+
 const app = new Vue({
     el: '#app'
 });

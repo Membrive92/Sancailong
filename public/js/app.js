@@ -45610,14 +45610,10 @@ var render = function() {
     { staticClass: "text-warning" },
     [
       _vm.processing
-        ? _c(
-            "div",
-            { staticClass: "alert text-warning alert-primary text-center " },
-            [
-              _c("i", { staticClass: "fa fa-compass text-warning" }),
-              _vm._v(" Procesando petición\n    ")
-            ]
-          )
+        ? _c("div", { staticClass: "alert alert-primary text-center " }, [
+            _c("i", { staticClass: "fa fa-compass text-warning" }),
+            _vm._v(" Procesando petición\n    ")
+          ])
         : _vm._e(),
       _vm._v(" "),
       _c(

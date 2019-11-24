@@ -1,6 +1,6 @@
 <template class="text-warning">
     <div class="text-warning">
-        <div class="alert text-warning alert-primary text-center " v-if="processing">
+        <div class="alert alert-primary text-center " v-if="processing">
             <i class="fa fa-compass text-warning"></i> Procesando petición
         </div>
         <v-server-table class="text-warning" ref="table" :columns="columns" :url="url" :options="options">
