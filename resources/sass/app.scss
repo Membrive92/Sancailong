@@ -35,10 +35,13 @@ header .navbar-laravel {
     background-color: $app-bg-color;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     .nav-link, .navbar-brand {
-        color: #feda05 !important;
+        color: #fec728 !important;
     }
 }
 
+.custom_hover:hover{
+    background-color: #0a0c0d;
+}
 
 
 .btn-facebook {
@@ -120,4 +123,9 @@ header .navbar-laravel {
 }
 .fm-video .vjs-slider{
     background: #e0ff0e;
+}
+
+.photo {
+    border: 10px #cca713;
+
 }

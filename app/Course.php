@@ -120,6 +120,9 @@ class Course extends Model
 
     }
 
+
+
+
     // ruta de la imagen de los cursos
     public function pathAttachment () {
         return "/images/courses/" . $this->picture;

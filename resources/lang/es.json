@@ -22,7 +22,9 @@
   "A fresh verification link has been sent to your email address": "Se ha enviado un enlace para verificar tu dirrecion de correo",
   "Before proceeding, please check your email for a verification link":"Antes de continuar, por favor, revisa tu correo electronico para verificar el enlace" ,
   "If you did not receive the email":"Si no recibiste el email" ,
-  "click here to request another": "Haz click aqui para enviar otra"
+  "click here to request another": "Haz click aqui para enviar otra",
+    "Send Password Reset Link": "Enviar enlace para resetear contraseña",
+    "Reset Password": "Recuperar contraseña"
 
 
 

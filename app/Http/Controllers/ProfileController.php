@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
+use App\Http\Requests\ProfileRequest;
 use App\Rules\StrengthPassword;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -13,13 +16,25 @@ class ProfileController extends Controller
         return view('profile.index', compact('user'));
     }
     // con este metodo validamos la contraseña con la Rule y cambiamos la contraseña
-    public function update(){
-        $this->validate(\request(),[
-           'password' => ['confirmed', new StrengthPassword]
-        ]);
-        $user = auth()->user();
-        $user->password = bcrypt(request('password'));
-        $user->save();
-        return back()->with('message', ['success', __("Usuario actualizado correctamente")]);
+
+        public function update(){
+            $picture =Helper::uploadFile( "picture", 'users');
+            $this->validate(\request(),[
+                'password' => ['confirmed', new StrengthPassword],
+                'picture' => 'required|image|mimes:jpg,jpeg,png'
+            ]);
+
+            $user = auth()->user();
+            $user->password = bcrypt(request('password'));
+            $user->picture = $picture;
+            $user->last_name = \request('name');
+            $user->save();
+            return back()->with('message', ['success', __("Usuario actualizado correctamente")]);
+
+
+
+
+
+
     }
 }

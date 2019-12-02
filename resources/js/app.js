@@ -31,6 +31,8 @@ Vue.component('courses-list', Courses);
 
 
 
+
+
 const app = new Vue({
     el: '#app'
 });

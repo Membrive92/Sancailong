@@ -17,35 +17,92 @@
                         {{ __("Actualiza tus datos") }}
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('profile.update') }}" novalidate>
+                        <form method="POST" action="{{ route('profile.update') }}"  enctype="multipart/form-data" novalidate>
                             @csrf
                             @method('PUT')
+
+
+                            <div class="form-group row offset-1">
+                                <div class="card-body col-md-8 mr-2 offset-4 ">
+                                    <img class="photo col-md-4"  src="{{ auth()->user()->pathAttachment() }}">
+                                </div>
+
+
+
+
+
+
+
+
+                                    <div class="col-md-8  mr-1  offset-4 d-flex justify-content-center align-items-center">
+                                        <input
+                                            type="file"
+                                            class="col-6 custom-file-input{{ $errors->has('picture') ? ' is-invalid' : ''}} "
+                                            id="picture"
+                                            name="picture"
+                                        />
+
+                                        <label
+                                            class="custom-file-label col-md-6" for="picture"
+                                        >
+                                            {{ __("Escoge una imagen para tu perfil") }}
+                                        </label>
+                                    </div>
+                            </div>
+
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">
+                                        {{ __("Nombre") }}
+                                    </label>
+
+                                    <div class="col-md-6">
+                                        <!-- uso el operador ternario para controlar si hay algun error en el email, si lo hay añado la clase -->
+                                        <input
+                                            id="name"
+                                            type="text"
+                                            readonly
+                                            class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                            name="name"
+                                            value="{{ $user->name }}"
+                                            required
+                                            autofocus
+                                        />
+
+
+                                        @if($errors->has('name'))
+                                            <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">
-                                    {{ __("Correo electrónico") }}
+                                    {{ __("Apellido") }}
                                 </label>
 
                                 <div class="col-md-6">
                                     <!-- uso el operador ternario para controlar si hay algun error en el email, si lo hay añado la clase -->
                                     <input
-                                            id="email"
-                                            type="email"
-                                            readonly
-                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                            name="email"
-                                            value="{{ $user->email }}"
-                                            required
-                                            autofocus
+                                        id="last_name"
+                                        type="text"
+                                        class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}"
+                                        name="name"
+                                        value="{{ $user->last_name }}"
+                                        required
+                                        autofocus
                                     />
 
 
-                                    @if($errors->has('email'))
+                                    @if($errors->has('last_name'))
                                         <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong>{{ $errors->first('last_name') }}</strong>
                                         </span>
                                     @endif
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <label
                                         for="password"
@@ -126,7 +183,7 @@
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card ">
                         <div class="card-header">
                             {{ __("Mis estudiantes") }}
                         </div>

@@ -11196,7 +11196,11 @@ header .navbar-laravel {
 
 header .navbar-laravel .nav-link,
 header .navbar-laravel .navbar-brand {
-  color: #feda05 !important;
+  color: #fec728 !important;
+}
+
+.custom_hover:hover {
+  background-color: #0a0c0d;
 }
 
 .btn-facebook {
@@ -11281,5 +11285,9 @@ header .navbar-laravel .navbar-brand {
 
 .fm-video .vjs-slider {
   background: #e0ff0e;
+}
+
+.photo {
+  border: 10px #cca713;
 }
 

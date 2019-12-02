@@ -14,6 +14,9 @@ Route::get('/set_language/{lang}', 'Controller@setLanguage')->name('set_language
 Route::get('login/{driver}', 'Auth\LoginController@redirectToProvider')->name('social_auth');
 Route::get('login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::get('/password/email','PasswordController@getEmail')->name('password.email');
+Route::post('/password/reset/','PasswordController@postEmail')->name('password.reset');
+
 Route::get('/','HomeController@index', function () {
     return view('home', compact('courses'));
 });
@@ -21,6 +24,7 @@ Route::get('/','HomeController@index', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::group(['prefix' => 'courses'], function () {
     Route::group(['middleware' => ['auth']], function () {
 

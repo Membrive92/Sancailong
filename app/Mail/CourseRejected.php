@@ -34,7 +34,7 @@ class CourseRejected extends Mailable
     {
         return $this
             ->subject(__("Lo sentimos"))
-            ->markdown('emails.course_rejected')
+            ->markdown('auth.passwords.reset')
             ->with('course', $this->course);
     }
 }
