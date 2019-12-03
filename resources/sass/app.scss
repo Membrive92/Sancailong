@@ -10,26 +10,19 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
+    font-weight: 800;
 
-    font-family: 'Hind Vadodara', sans-serif;
-    background: url("/public/images/sancailong-back.jpg");
+
 
 }
 
-main {
-    min-height: 87vh;
-}
+
 img{
      size:200px;
 
 }
 
-.footer {
-    width: 100%;
-    background-color: #4c515c;
-    color: #fff;
-    padding: 30px;
-}
+
 
 header .navbar-laravel {
     background-color: $app-bg-color;
@@ -39,9 +32,7 @@ header .navbar-laravel {
     }
 }
 
-.custom_hover:hover{
-    background-color: #0a0c0d;
-}
+
 
 
 .btn-facebook {
@@ -129,3 +120,5 @@ header .navbar-laravel {
     border: 10px #cca713;
 
 }
+
+

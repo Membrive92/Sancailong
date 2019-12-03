@@ -8,10 +8,10 @@
             @forelse($course->reviews as $review)
               <div class="col-md-8 offset-2 listing-block">
                   <div class="media">
-                      <img class="img-rounded" src="{{ $review->user->pathAttachment() }}" alt="{{ $review->user->name }}">
+                      <img style="width: 20%; height: 20%" class="img-rounded" src="{{ $review->user->pathAttachment() }}" alt="{{ $review->user->name }}">
                       <div class="media-body pl-3">
                           @if($review->comment)
-                          <div class="price"><small>{{ $review->comment }}</small></div>
+                          <div class="price"><h4>{{ $review->comment }}</h4></div>
                               @endif
                           <div class="stats">
                               {{$review->created_at->format('d/m/Y')}}

@@ -22,28 +22,22 @@
                             @method('PUT')
 
 
-                            <div class="form-group row offset-1">
-                                <div class="card-body col-md-8 mr-2 offset-4 ">
-                                    <img class="photo col-md-4"  src="{{ auth()->user()->pathAttachment() }}">
-                                </div>
+                            <div class="form-group row ">
+
+                                    <img class="col-md-4 col-lg-8 offset-lg-2"  src="{{ auth()->user()->pathAttachment() }}">
 
 
 
-
-
-
-
-
-                                    <div class="col-md-8  mr-1  offset-4 d-flex justify-content-center align-items-center">
+                                    <div class="col-md-4 mt-4 col-lg-8 offset-lg-4 col-form-label text-md-right text-lg-left" >
                                         <input
                                             type="file"
-                                            class="col-6 custom-file-input{{ $errors->has('picture') ? ' is-invalid' : ''}} "
+                                            class="custom-file-input{{ $errors->has('picture') ? ' is-invalid' : ''}} "
                                             id="picture"
                                             name="picture"
                                         />
 
                                         <label
-                                            class="custom-file-label col-md-6" for="picture"
+                                            class="  custom-file-label col-md-6" for="picture"
                                         >
                                             {{ __("Escoge una imagen para tu perfil") }}
                                         </label>
