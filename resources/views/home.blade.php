@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
+
+            }
+
+    </style>
+@endpush
+
 @section('jumbotron')
     @include('partials.jumbotron', [
         "title" => __("Cursos disponibles para realizar"),
@@ -8,7 +20,7 @@
 @endsection
 
 @section('content')
-    <div class="pl-5 pr-5">
+    <div class="pl-5 pr-5 te">
         <div class="row justify-content-center">
             @forelse($courses as $course)
                 <div class="col-md-3">
@@ -21,7 +33,7 @@
                 </div>
             @endforelse
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center text-warning">
             {{ $courses->links() }}
         </div>
     </div>

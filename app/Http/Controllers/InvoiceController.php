@@ -10,6 +10,7 @@ class InvoiceController extends Controller
     public function manage () {
         $invoices = new Collection;
         if (auth()->user()->stripe_id) {
+
             $invoices = auth()->user()->invoices();
         }
         return view('invoices.manage', compact('invoices'));

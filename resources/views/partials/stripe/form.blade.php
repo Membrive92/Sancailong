@@ -1,7 +1,7 @@
 <form action="{{ route('subscription.process_subscription') }}" method="POST">
     @csrf
     <input
-            class="form-control"
+            class="form-control pr-4"
             name="coupon"
             placeholder="{{ __("¿Tienes un cupon?") }}"
     />

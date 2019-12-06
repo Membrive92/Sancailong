@@ -1,8 +1,18 @@
 @extends('layouts.app')
 
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
 
+        }
+
+    </style>
+@endpush
 @section('jumbotron')
-    @include('partials.jumbotron',['title' => 'Mis Cursos Creados','icon' => 'building' ])
+    @include('partials.jumbotron',['title' => __('Mis Cursos Creados'),'icon' => 'building' ])
     @endsection
 
 @section('content')
@@ -37,16 +47,16 @@
                     </div>
                 </div>
             @empty
-                <div class="alert alert-dark text-warning">
+                <div class="alert alert-dark bg-dark text-warning">
                     {{ __("No tienes ningún curso todavía") }}<br />
-                    <a class="btn btn-course btn-block" href="{{ route('courses.create') }}">
+                    <a class="btn btn-course btn-block "  href="{{ route('courses.create') }}">
                         {{ __("Crear mi primer curso!") }}
                     </a>
                 </div>
             @endforelse
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center text-warning">
             {{ $courses->links() }}
         </div>
     </div>

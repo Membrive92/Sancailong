@@ -6,6 +6,16 @@
 
 @push('styles')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+        <style>
+            body { background-size: cover;
+                background-image: url("{{ asset('/images/scl.jpg')}}");
+                background-position: center;
+                background-repeat: no-repeat;
+
+            }
+
+        </style>
+
 @endpush
 
 @section('content')
@@ -13,7 +23,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-warning bg-dark">
                         {{ __("Actualiza tus datos") }}
                     </div>
                     <div class="card-body">
@@ -153,7 +163,7 @@
                 </div>
                 @if( ! $user->teacher)
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header text-warning bg-dark">
                             {{ __("Convertirme en profesor de la plataforma") }}
                         </div>
                         <div class="card-body">
@@ -167,7 +177,7 @@
                     </div>
                 @else
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header text-warning bg-dark">
                             {{ __("Administrar los cursos que imparto") }}
                         </div>
                         <div class="card-body">
@@ -178,7 +188,7 @@
                     </div>
 
                     <div class="card ">
-                        <div class="card-header">
+                        <div class="card-header bg-dark text-warning">
                             {{ __("Mis estudiantes") }}
                         </div>
                         <div class="card-body">

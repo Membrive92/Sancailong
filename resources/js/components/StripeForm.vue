@@ -1,6 +1,6 @@
 <template>
     <stripe-checkout
-            button="Subscribirme"
+            button="Suscribirme"
             buttonClass="btn btn-course"
             :stripe-key="stripe_key"
             :product="product"

@@ -28,7 +28,7 @@
     @stack('styles')
     @yield('unique_styles')
 </head>
-<body style="background-position: center; background-repeat: no-repeat; background-image:url('{{ asset('/images/sancailong-back.jpg')  }} ')" >
+<body >
 @include('partials.navigation')
 
 @yield('jumbotron')

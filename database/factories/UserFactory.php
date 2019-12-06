@@ -26,7 +26,6 @@ $factory->define(User::class, function (Faker $faker) {
         'slug' => Str::slug($name . " " . $last_name, '-'),
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => Str::random(10),
         'picture' => \Faker\Provider\Image::image(storage_path() . '/app/public/users', 200, 200, 'people', false),
     ];
 });

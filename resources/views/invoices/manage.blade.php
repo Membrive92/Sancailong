@@ -1,9 +1,20 @@
+
 @extends('layouts.app')
 
 @section('jumbotron')
-    @include('partials.jumbotron', ['title' => 'Manejar mis facturas', 'icon' => 'archive'])
+    @include('partials.jumbotron', ['title' => __('Manejar mis facturas'), 'icon' => 'archive'])
 @endsection
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
 
+        }
+
+    </style>
+@endpush
 @section('content')
     <div class="pl-5 pr-5 text-warning">
         <div class=" row justify-content-center">

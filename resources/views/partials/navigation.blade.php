@@ -1,9 +1,9 @@
 
 <header>
-    <nav class="navbar navbar-expand-md text-center  bg-dark text-warning  navbar-laravel ">
-        <div class="container">
+    <nav class="navbar navbar-expand-md text-center  bg-dark text-warning  navbar-laravel " >
+        <div class="container ml-5" >
 
-            <a class="navbar-brand" href="{{ url('/') }}" style="font-size: 250%"><!--<img src="/public/css/scl.jpg" alt="logo">-->
+            <a class="navbar-brand" href="{{ url('/') }}" style="font-size: 150%"><!--<img src="/public/css/scl.jpg" alt="logo">-->
                 {{ config('app.name') }}
             </a>
 

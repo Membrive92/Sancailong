@@ -14,9 +14,9 @@ class CreateTableCourseStudent extends Migration
     public function up()
     {
         Schema::create('course_student', function (Blueprint $table) {
-            $table->unsignedInteger('course_id');
+            $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses');
-            $table->unsignedInteger('student_id');
+            $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students');
         });
     }

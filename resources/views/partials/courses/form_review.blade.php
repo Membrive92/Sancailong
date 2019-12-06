@@ -1,12 +1,13 @@
 @cannot('inscribe', $course)
     @can('review', $course)
-        <div class="col-12 pt-0 mt-4 text-center">
-            <h2 class="text-muted">{{__("Escribe una valoracion") }}</h2>
+
+        <div class="col-12 pt-0 mt-4 " >
+            <h2 class=" text-warning">{{__("Escribe una valoracion") }}</h2>
             <hr>
         </div>
 
 
-        <div class="container-fluid">
+        <div class="container-fluid mb-4 ">
             <form method="POST" action="{{ route('courses.add_review') }}" class="form-inline" id="rating-form">
                 @csrf
                 <div class="form-group">
@@ -26,7 +27,7 @@
                 <input type="hidden" name="rating_input" value="1">
                 <input type="hidden" name="course_id" value="{{ $course->id }}">
 
-                <div class="form-group">
+                <div class="form-group ">
                     <div class="col-12">
                         <textarea class="form-control" name="message" id="message" cols="160" rows="8"
                                   placeholder="{{__("Escribe tu opinión")}}"></textarea>
@@ -37,6 +38,8 @@
                 </button>
             </form>
         </div>
+
+
     @endcan
 @endcannot
 

@@ -6,14 +6,14 @@
     />
 
     <div class="card-body">
-        <span class="badge-box"><i class="fa fa-check"></i> </span>
+        <span class="badge-box "><i class="fa fa-check text-warning"></i> </span>
         <h4 class="card-title">{{ $course->name }}</h4>
         <hr>
         <div class="row justify-content-center">
            @include('partials.courses.rating', ['rating' => $course->custom_rating])
         </div>
         <hr>
-        <span class="badge badge-dark badge-cat">{{$course->category->name}}</span>
+        <span class="badge badge-dark badge-cat text-warning">{{$course->category->name}}</span>
         <p class="card-text">
             {{Str::limit($course->description, 200)}}
         </p>

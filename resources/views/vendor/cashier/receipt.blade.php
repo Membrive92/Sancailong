@@ -8,9 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background: #fff;
-            background-image: none;
-            font-size: 12px;
+            margin-right: 20%;
+            font-size: 20px;
         }
         address{
             margin-top:15px;
@@ -48,11 +47,12 @@
         .well {
             margin-top: 15px;
         }
+
     </style>
 </head>
 
-<body>
-<div class="container">
+<body >
+<div class="container" style="margin-right: 20%">
     <table style="margin-left: auto; margin-right: auto" width="550">
         <tr>
             <td width="160">
@@ -60,27 +60,15 @@
             </td>
 
             <!-- Organization Name / Image -->
-            <td align="right">
+            <td align="left" style="font-size: 40px">
                 <strong>{{ $header ?? $vendor }}</strong>
             </td>
         </tr>
-        <tr valign="top">
-            <td style="font-size:28px;color:#cccccc;">
-                    Receipt
-            </td>
 
-            <!-- Organization Name / Date -->
-            <td>
-                <br><br>
-                <strong>To:</strong> {{ $owner->email ?: $owner->name }}
-                <br>
-                <strong>Date:</strong> {{ $invoice->date()->toFormattedDateString() }}
-            </td>
-        </tr>
         <tr valign="top">
             <!-- Organization Details -->
             <td style="font-size:9px;">
-                {{ $vendor }}<br>
+
                 @if (isset($street))
                     {{ $street }}<br>
                 @endif
@@ -97,12 +85,33 @@
                     <a href="{{ $url }}">{{ $url }}</a>
                 @endif
             </td>
+            <td style="margin-right: 10%">
+
+
+        <tr class="receipt" valign="top">
             <td>
-                <!-- Invoice Info -->
+                <br><br>
+                <strong>Para:</strong> {{ $owner->email ?: $owner->name }}
+                <br>
+                <strong>Fecha:</strong> {{ $invoice->date()->toFormattedDateString() }}
+            </td>
+
+
+            <td>
                 <p>
-                    <strong>Product:</strong> {{ $product }}<br>
-                    <strong>Invoice Number:</strong> {{ $id ?? $invoice->id }}<br>
+                    <br><br>
+                    <strong>Producto:</strong> {{ $product }}<br>
+
+                    <strong>Numero de Factura:</strong> {{ $id ?? $invoice->id }}<br>
                 </p>
+            </td>
+        </tr>
+
+
+
+
+
+
 
                 <!-- Extra / VAT Information -->
                 @if (isset($vat))
@@ -114,19 +123,13 @@
                 <br><br>
 
                 <!-- Invoice Table -->
-                <table width="100%" class="table" border="0">
+                <table width="100%" class="table" border="0" style="padding-left: 35%; padding-top: 5%">
                     <tr>
-                        <th align="left">Description</th>
-                        <th align="right">Date</th>
-                        <th align="right">Amount</th>
+                        <th align="left"  >Descripcion</th>
+                        <th align="right"  >Fecha</th>
+                        <th align="right" >Cantidad</th>
                     </tr>
 
-                    <!-- Existing Balance -->
-                    <tr>
-                        <td>Starting Balance</td>
-                        <td>&nbsp;</td>
-                        <td>{{ $invoice->startingBalance() }}</td>
-                    </tr>
 
                     <!-- Display The Invoice Items -->
                     @foreach ($invoice->invoiceItems() as $item)
@@ -139,7 +142,7 @@
                     <!-- Display The Subscriptions -->
                     @foreach ($invoice->subscriptions() as $subscription)
                         <tr>
-                            <td>Subscription ({{ $subscription->quantity }})</td>
+                            <td>Subscripcion ({{ $subscription->quantity }})</td>
                             <td>
                                 {{ $subscription->startDateAsCarbon()->formatLocalized('%B %e, %Y') }} -
                                 {{ $subscription->endDateAsCarbon()->formatLocalized('%B %e, %Y') }}

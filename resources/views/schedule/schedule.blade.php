@@ -1,5 +1,15 @@
 @extends('layouts.app')
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
 
+        }
+
+    </style>
+@endpush
 @section('jumbotron')
     @include('partials.jumbotron', ['title' => __('Gestiona tu horario'), 'icon' => 'calendar'])
 @endsection
@@ -63,7 +73,7 @@
                                 </label>
 
 
-                                
+
                             </td>
                             <td>
                                 <div class="row">
@@ -134,8 +144,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-
         </div>
     </form>
 @endsection

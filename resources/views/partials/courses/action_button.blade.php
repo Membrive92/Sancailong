@@ -3,7 +3,7 @@
         @can('opt_for_course', $course)
             @can('subscribe', \App\Course::class)
                 <a class="btn btn-subscribe btn-bottom btn-block text-warning" href="{{ route('subscription.plans') }}">
-                    <i class="fa fa-bolt"></i> {{ __("Subscribirme") }}
+                    <i class="fa fa-bolt"></i> {{ __("Suscribirme") }}
                 </a>
             @else
                 @can('inscribe', $course)

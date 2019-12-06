@@ -3,7 +3,17 @@
 @section('jumbotron')
     @include('partials.jumbotron', ['title' => __("Administrar cursos"), 'icon' => 'unlock-alt'])
 @endsection
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
 
+        }
+
+    </style>
+@endpush
 @section('content')
     <div class="pl-5 pr-5 text-warning">
         <courses-list

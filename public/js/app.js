@@ -45771,7 +45771,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("stripe-checkout", {
     attrs: {
-      button: "Subscribirme",
+      button: "Suscribirme",
       buttonClass: "btn btn-course",
       "stripe-key": _vm.stripe_key,
       product: _vm.product

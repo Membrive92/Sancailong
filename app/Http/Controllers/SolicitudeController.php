@@ -36,6 +36,6 @@ class SolicitudeController extends Controller
                  // mensaje de  error mostrado al usuario
             return back()->with('message', ['danger', $success]);
         }
-        return back()->with('message', ['danger', __("Ha ocurrido un error ")]);
+        return back()->with('message', ['danger', __("Ha ocurrido un error")]);
     }
 }

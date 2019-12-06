@@ -12,14 +12,14 @@ class Cashier
      *
      * @var string
      */
-    protected static $currency = 'usd';
+    protected static $currency = 'eur';
 
     /**
      * The current currency symbol.
      *
      * @var string
      */
-    protected static $currencySymbol = '$';
+    protected static $currencySymbol = '€';
 
     /**
      * The custom currency formatter.

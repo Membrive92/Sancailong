@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+    </style>
+@endpush
 @section('jumbotron')
     @include('partials.jumbotron', ['title' => __("Dar de alta un nuevo curso"), 'icon' => 'edit'])
 @endsection
@@ -22,7 +33,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-dark text-warning">
                             {{ __("Información del curso") }}
                         </div>
                         <div class="card-body">
@@ -69,7 +80,7 @@
 
                         <div class="form-group row">
                             <label for="category_id"
-                                   class="col-md-4 col-form-label text-md-right">{{ __("Categoría del curso") }}</label>
+                                   class="col-md-4 col-form-label  text-md-right">{{ __("Categoría del curso") }}</label>
                             <div class="col-md-6">
                                 <select name="category_id" id="category_id" class="form-control">
                                     @foreach(\App\Category::groupBy('name')->pluck('name', 'id') as $id => $category)
@@ -139,7 +150,7 @@
 
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">{{ __("Requisitos para tomar el curso") }}</div>
+                        <div class="card-header bg-dark text-warning">{{ __("Requisitos para tomar el curso") }}</div>
                         <div class="card-body">
                             <div class="form-group row">
                                 <label
@@ -215,7 +226,7 @@
 
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">{{ __("Objetivos del curso") }}</div>
+                        <div class="card-header bg-dark text-warning">{{ __("Objetivos del curso") }}</div>
 
                         <div class="card-body">
                             <div class="form-group row">

@@ -14,15 +14,15 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->comment('Nombre del rol de usuario');
+            $table->bigIncrements('id');
+            $table->string('name');
             $table->text('description');
             $table->timestamps();
         });
 
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('role_id')->default(\App\Role::STUDENT);
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('role_id')->default(\App\Role::STUDENT);
             $table->foreign('role_id')->references('id')->on('roles');
             $table->string('name');
             $table->string('last_name')->nullable();
@@ -36,14 +36,13 @@ class CreateUsersTable extends Migration
             $table->string('card_brand')->nullable();
             $table->string('card_last_four')->nullable();
             $table->timestamp('trial_ends_at')->nullable();
-
             $table->rememberToken();
             $table->timestamps();
         });
 
         Schema::create('subscriptions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('stripe_id');
@@ -56,8 +55,8 @@ class CreateUsersTable extends Migration
 
         Schema::create('user_social_accounts', function(Blueprint $table)
         {
-            $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('provider');
             $table->string('provider_uid');

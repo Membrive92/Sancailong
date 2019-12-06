@@ -1,6 +1,6 @@
-<div class="align-content-center">
-    <div class="col-12 pt-0 mt-4">
-        <h2 class="text-muted">{{ __("Valoraciones") }}</h2>
+<div class="align-content-center ">
+    <div class="col-12 pt-0 mt-4 ">
+        <h2 class="text-warning">{{ __("Valoraciones") }}</h2>
         <hr>
     </div>
     <div class="container-fluid">

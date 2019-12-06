@@ -11275,3 +11275,7 @@ header .navbar-laravel .navbar-brand {
   border: 10px #cca713;
 }
 
+.page-item {
+  color: #fec119;
+}
+

@@ -1,5 +1,5 @@
-<div class="col-12 pt-0 mt-0">
-    <h2 class="text-muted ">{{ __("Descripcion Para el curso") }}</h2>
+<div class="col-12 pt-0 mt-0 ">
+    <h2 class="  text-warning ">{{ __("Descripcion Para el curso") }}</h2>
     <hr>
 </div>
 

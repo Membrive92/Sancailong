@@ -3,23 +3,33 @@
 
 
 @section('jumbotron')
-    @include('partials.jumbotron', ['title' => 'Manejar mis suscripciones', 'icon' => 'list-ol'])
+    @include('partials.jumbotron', ['title' => __('Manejar mis suscripciones'), 'icon' => 'list-ol'])
 @endsection
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
 
+        }
+
+    </style>
+@endpush
 @section('content')
     <div class="pl-5 pr-5"></div>
-       <div class="ml-0 row justify-content-center">
-           <table class="table table-hover table-dark text-warning">
+       <div class=" row justify-content-center pl-5 pr-5">
+           <table class="table table-hover table-dark text-warning ">
                <thead>
                <tr>
-                   <th scope="col">#</th>
-                   <th scope="col">Nombre</th>
-                   <th scope="col">Plan</th>
-                   <th scope="col">ID Suscripción</th>
-                   <th scope="col">Cantidad</th>
-                   <th scope="col">Alta</th>
-                   <th scope="col">Finaliza en</th>
-                   <th scope="col">Cancelar / Reanudar</th>
+
+                   <th scope="col">{{__("Nombre")}}</th>
+                   <th scope="col">{{__("Plan")}}</th>
+                   <th scope="col">{{__("ID Suscripción")}}</th>
+                   <th scope="col">{{__("Cantidad")}}</th>
+                   <th scope="col">{{__("Alta")}}</th>
+                   <th scope="col">{{__("Finaliza en")}}</th>
+                   <th scope="col">{{__("Cancelar / Reanudar")}}</th>
                </tr>
                </thead>
                <tbody>
