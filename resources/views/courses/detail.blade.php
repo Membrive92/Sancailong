@@ -3,9 +3,19 @@
 @section('jumbotron')
     @include('partials.courses.jumbotron')
 @endsection
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
 
+        }
+
+    </style>
+@endpush
 @section('content')
-    <div class="pl-5 pr-5 card " style="background: rgba(184,52,53,0.86)">
+    <div class="pl-5 pr-5 card ">
         <div class="row justify-content-center">
             @can('watch', $course)
             @include('partials.courses.video')

@@ -1,5 +1,5 @@
 <div class="col-12 pt-0 mt-4">
-    <h2 class="text-warning ">{{ __("Metas del curso") }}</h2>
+    <h2 class="text-dark" style="font-size: 35px; font-weight: 600">{{ __("Metas del curso") }}</h2>
     <hr>
 </div>
 @forelse( $goals as $goal)

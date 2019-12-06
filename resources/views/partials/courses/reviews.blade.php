@@ -1,6 +1,6 @@
 <div class="align-content-center ">
     <div class="col-12 pt-0 mt-4 ">
-        <h2 class="text-warning">{{ __("Valoraciones") }}</h2>
+        <h2 class="text-dark" style="font-size: 35px; font-weight: 600">{{ __("Valoraciones") }}</h2>
         <hr>
     </div>
     <div class="container-fluid">

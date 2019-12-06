@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-body">
+        <div class="card-body text-warning bg-dark">
             @if ($errors->any())
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -41,13 +41,13 @@
                 </div>
             @endif
 
-            <form action="" method="post">
+            <form action="" method="post" >
                 @csrf
-                <div class="form-group">
+                <div class="form-group  ">
                     <label for="name">{{ __('Cursos') }}</label>
                     <select name="course_id" id="course" class="form-control">
                     @foreach($courses as $course)
-                        <option value="{{$course->id}}">{{$course->name}}</option>
+                        <option  value="{{$course->id}}">{{$course->name}}</option>
                         @endforeach
                     </select>
                 </div>

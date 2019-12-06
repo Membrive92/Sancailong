@@ -2,7 +2,7 @@
     @can('review', $course)
 
         <div class="col-12 pt-0 mt-4 " >
-            <h2 class=" text-warning">{{__("Escribe una valoracion") }}</h2>
+            <h2 class="text-dark" style="font-size: 35px; font-weight: 600">{{__("Escribe una valoracion") }}</h2>
             <hr>
         </div>
 
