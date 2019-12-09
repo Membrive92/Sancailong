@@ -128,7 +128,7 @@ class Course extends Model
         return "/images/courses/" . $this->picture;
     }
     public function Video_pathAttachment () {
-        return   "https://sancailong.it/storage/video/". $this->url;
+        return   "/storage/video/". $this->url;
     }
 
 

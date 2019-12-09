@@ -191,19 +191,22 @@
                         <div class="card-header bg-dark text-warning">
                             {{ __("Mis estudiantes") }}
                         </div>
-                        <div class="card-body">
+                        <div class="card-body offset-0 mr-4 ">
                             <table
                                     class="table table-striped table-bordered nowrap"
                                     cellspacing="0"
                                     id="students-table"
                             >
+
+
                                 <thead>
                                 <tr>
+                                    <th>{{ __("Acciones") }}</th>
                                     <th>{{ __("ID") }}</th>
                                     <th>{{ __("Nombre") }}</th>
                                     <th>{{ __("Email") }}</th>
                                     <th>{{ __("Cursos") }}</th>
-                                    <th>{{ __("Acciones") }}</th>
+
                                 </tr>
                                 </thead>
                             </table>
@@ -227,16 +230,19 @@
                 lengthMenu: [ 5, 10, 25, 50, 75, 100 ],
                 processing: true,
                 serverSide: true,
+                autoWidth: true,
+                scrollCollapse: true,
                 ajax: '{{ route('teacher.students') }}',
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
                 },
                 columns: [
+                    {data: 'actions'},
                     {data: 'user.id', visible: false},
                     {data: 'user.name'},
                     {data: 'user.email'},
-                    {data: 'courses_formatted'},
-                    {data: 'actions'}
+                    {data: 'courses_formatted'}
+
                 ]
             });
             $(document).on("click", '.btnEmail', function (e) {
