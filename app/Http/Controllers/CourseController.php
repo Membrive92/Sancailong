@@ -118,6 +118,11 @@ class CourseController extends Controller
             $picture = Helper::uploadFile( "picture", 'courses');
             $course_request->merge(['picture' => $picture]);
         }
+        if($course_request->hasFile('video')) {
+            \Storage::delete('courses/' . $course->video);
+            $video = Helper::uploadFile( "video", 'video');
+            $course_request->merge(['url' => $video]);
+        }
 
         $course->fill($course_request->input())->save();
         return back()->with('message', ['success', __('Curso actualizado')]);

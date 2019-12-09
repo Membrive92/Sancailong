@@ -191,9 +191,9 @@
                         <div class="card-header bg-dark text-warning">
                             {{ __("Mis estudiantes") }}
                         </div>
-                        <div class="card-body offset-0 mr-4 ">
+                        <div class="card-body offset-0 mr-4 overflow-auto  ">
                             <table
-                                    class="table table-striped table-bordered nowrap"
+                                    class="table  table-striped table-bordered nowrap"
                                     cellspacing="0"
                                     id="students-table"
                             >
@@ -232,6 +232,7 @@
                 serverSide: true,
                 autoWidth: true,
                 scrollCollapse: true,
+                responsive:true,
                 ajax: '{{ route('teacher.students') }}',
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
@@ -243,8 +244,11 @@
                     {data: 'user.email'},
                     {data: 'courses_formatted'}
 
-                ]
+                ],
+
             });
+
+
             $(document).on("click", '.btnEmail', function (e) {
                 e.preventDefault();
                 const id = $(this).data('id');

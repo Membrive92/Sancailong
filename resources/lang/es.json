@@ -24,7 +24,10 @@
   "If you did not receive the email":"Si no recibiste el email" ,
   "click here to request another": "Haz click aqui para enviar otra",
     "Send Password Reset Link": "Enviar enlace para resetear contraseña",
-    "Reset Password": "Recuperar contraseña"
+    "Reset Password": "Recuperar contraseña",
+    "Register": "Registrarse",
+    "Name": "Nombre",
+    "Confirm Password": "Confirmar contraseña"
 
 
 
