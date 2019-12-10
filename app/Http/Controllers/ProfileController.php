@@ -18,7 +18,9 @@ class ProfileController extends Controller
     // con este metodo validamos la contraseña con la Rule y cambiamos la contraseña
 
         public function update(){
+
             $picture =Helper::uploadFile( "picture", 'users');
+
             $this->validate(\request(),[
                 'password' => ['confirmed', new StrengthPassword],
                 'picture' => 'required|image|mimes:jpg,jpeg,png'

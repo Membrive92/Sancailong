@@ -12,7 +12,7 @@
     </style>
 @endpush
 @section('jumbotron')
-    @include('partials.jumbotron',['title' => __('Mis Cursos Creados'),'icon' => 'building' ])
+    @include('partials.jumbotron',['title' => __('Cursos impartidos'),'icon' => 'building' ])
     @endsection
 
 @section('content')

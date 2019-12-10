@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2f754ee0-1f6a-4afb-8c15-035680846670" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/navigations/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/navigations/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/CoursePolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/CoursePolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_210418_create_work_days_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_210418_create_work_days_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/navigations/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/navigations/teacher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/schedule/schedule.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/schedule/schedule.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/teachers/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/teachers/courses.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -162,19 +168,19 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\Sancailong\public\images" />
-      <recent name="C:\laragon\www\Sancailong" />
-      <recent name="C:\laragon\www\Sancailong\public" />
-      <recent name="C:\laragon\www\Sancailong\app\Http\Controllers" />
-      <recent name="C:\laragon\www\Sancailong\resources\views\partials\courses" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\Sancailong\public\images" />
       <recent name="C:\laragon\www\Sancailong\resources\views\vendor\cashier" />
       <recent name="C:\laragon\www\Sancailong\public" />
       <recent name="C:\laragon\www\Sancailong\resources\js\components" />
       <recent name="C:\laragon\www\Sancailong\resources\views\layouts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\Sancailong\public\images" />
+      <recent name="C:\laragon\www\Sancailong" />
+      <recent name="C:\laragon\www\Sancailong\public" />
+      <recent name="C:\laragon\www\Sancailong\app\Http\Controllers" />
+      <recent name="C:\laragon\www\Sancailong\resources\views\partials\courses" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -292,7 +298,8 @@
       <workItem from="1575720983730" duration="497000" />
       <workItem from="1575821598813" duration="4586000" />
       <workItem from="1575869350196" duration="393000" />
-      <workItem from="1575917747589" duration="3162000" />
+      <workItem from="1575917747589" duration="3766000" />
+      <workItem from="1575997413450" duration="7552000" />
     </task>
     <servers />
   </component>

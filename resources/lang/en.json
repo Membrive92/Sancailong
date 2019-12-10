@@ -14,7 +14,7 @@
   "Mis suscripciones": "Subscribtions",
   "Mis facturas": "Invoices",
   "Mis cursos": "Courses",
-  "Cursos desarrollados por mi": "Courses developed by me",
+  "Cursos impartidos": "My own courses",
   "Crear curso": "Create Course",
   "Información del curso": "Course's Information",
   "Nombre del curso": "Course's Name",
@@ -158,7 +158,9 @@
     "La subscripcion se ha llevado a cabo correctamente": "Your subscripcion has been made successfully",
     "Has reanudado tu suscripción correctamente": "Your subscription has been reactivate",
     "La suscripción se ha cancelado correctamente": "Your subscription has been canceled succesfully",
-    "Administrar ahora": "Manage now"
+    "Administrar ahora": "Manage now",
+    "Descargar": "Download",
+    "Error en la subida": "uploading failed"
 
 
 }

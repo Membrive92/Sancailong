@@ -28,7 +28,7 @@ class CoursePolicy
     }
     public function  watch (User $user, Course $course){
         //con esto permito que el usuario que este inscrito al video, pueda verlo
-        return $course->students->contains($user->id) || $user->role_id !== Role::STUDENT;
+        return $course->students->contains($user->id) || $user->teacher;
     }
 
     // Si el estudiante aun no ha hecho una valoracion , podra hacerla

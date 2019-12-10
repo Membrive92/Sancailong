@@ -1,5 +1,10 @@
 @extends('layouts.app')
+
+@section('jumbotron')
+    @include('partials.jumbotron', ['title' => __('Gestiona tu horario'), 'icon' => 'calendar'])
+@endsection
 @push('styles')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <style>
         body { background-size: cover;
             background-image: url("{{ asset('/images/scl.jpg')}}");
@@ -9,16 +14,13 @@
         }
 
     </style>
-@endpush
-@section('jumbotron')
-    @include('partials.jumbotron', ['title' => __('Gestiona tu horario'), 'icon' => 'calendar'])
-@endsection
 
+@endpush
 @section('content')
     <form action="/teacher/schedule" method="post">
         @csrf
-        <div class="card shadow ">
-            <div class="card-header border-0 bg-dark text-warning pt-0">
+        <div class="card shadow text-warning bg-dark">
+            <div class="card-header border-0 text-warning bg-dark">
                 <div class="row align-items-center ">
                     <div class="col">
                         <h3 class="mb-0">{{__("Gestionar Horario")}}</h3>
@@ -37,69 +39,54 @@
                     </div>
                 @endif
 
-                    @if (session('errors'))
-                        <div class="alert alert-danger" role="alert">
-                            {{__("Los cambios se han guardado pero:")}}
-                            <ul>
-                               @foreach( session('errors') as $error )
-                                   <li>{{$error}}</li>
-                                   @endforeach
-                            </ul>
-
-                        </div>
-                    @endif
-
             </div>
 
-            <div class="table-responsive text-warning ">
-                <table class="table align-items-center">
-                    <thead class="thead-light " style="font-size: 25px">
-                    <tr class="bg-dark " >
-                        <th class="bg-dark text-warning border-0 " scope="col" >{{__("Día")}}</th>
-                        <th class="bg-dark text-warning  border-0" scope="col">{{__("Activo")}}</th>
-                        <th class="bg-dark text-warning  border-0" scope="col">{{__("Turno mañana")}}</th>
-                        <th class="bg-dark text-warning  border-0" scope="col">{{__("Turno tarde")}}</th>
+            <div class="table-responsive bg-dark text-warning">
+                <table class="table align-items-center table-flush bg-dark text-warning">
+                    <thead class="thead-light ">
+                    <tr style="font-size: 25px">
+                        <th class="text-warning bg-dark" scope="col">Día</th>
+                        <th class="text-warning bg-dark" scope="col">Activo</th>
+                        <th class="text-warning bg-dark" scope="col">Turno mañana</th>
+                        <th class="text-warning bg-dark"  scope="col">Turno tarde</th>
                     </tr>
                     </thead>
-                    <tbody class="text-warning bg-dark">
-                    @foreach ($workDays as $key => $workDay )
+                    <tbody>
+                    @foreach ($days as $key => $day )
                         <tr>
-                            <th>{{ $days[$key] }}</th>
+                            <th>{{ $day }}</th>
                             <td>
-                                <label class="custom-toggle text-warning">
-                                    <input type="checkbox"  name="active[]" value="{{ $key }}"{{ $workDay->active ? 'checked' : '' }} >
-
-                                    <span class="custom-toggle-slider rounded-circle "></span>
+                                <label class="custom-toggle text-warning bg-dark">
+                                    <input type="checkbox" name="active[]" value="{{ $key }}">
+                                    <span class="custom-toggle-slider rounded-circle"></span>
                                 </label>
 
 
 
                             </td>
                             <td>
-                                <div class="row text-warning">
-                                    <div class="col text-warning">
-                                        <select class="form-control text-warning bg-dark" name="morning_start[]">
+                                <div class="row">
+                                    <div class="col">
+                                        <select class="form-control text-warning bg-dark " name="morning_start[]">
                                             @for ($i=5; $i<=11; $i++)
-                                                <option value="{{($i <10 ? '0' : '' ). $i }}:00"
-                                                    {{ $i.':00 AM' === $workDay->morning_start ? 'selected' : '' }}>
+                                                <option value="{{ $i }}:00">
                                                     {{ $i }}:00 AM
                                                 </option>
-                                                <option value="{{ ($i <10 ? '0' : '' ).$i }}:30"
-                                                    {{ $i.':30 AM' === $workDay->morning_start ? 'selected' : '' }}>
+                                                <option value="{{ $i }}:30">
                                                     {{ $i }}:30 AM
                                                 </option>
                                             @endfor
                                         </select>
                                     </div>
                                     <div class="col">
-                                        <select class="form-control bg-dark text-warning" name="morning_end[]">
+                                        <select class="form-control  text-warning bg-dark" name="morning_end[]">
                                             @for ($i=5; $i<=11; $i++)
-                                                <option value="{{ ($i <10 ? '0' : '' ).$i }}:00"
-                                                    {{ $i.':00 AM' === $workDay->morning_end ? 'selected' : '' }}>
+                                                <option value="{{ $i }}:00">
+
                                                     {{ $i }}:00 AM
                                                 </option>
-                                                <option value="{{ ($i <10 ? '0' : '' ).$i }}:30"
-                                                    {{ $i.':30 AM' === $workDay->morning_end ? 'selected' : '' }}>
+                                                <option value="{{ $i }}:30"
+                                                >
                                                     {{ $i }}:30 AM
                                                 </option>
                                             @endfor
@@ -109,29 +96,29 @@
                             </td>
                             <td>
                                 <div class="row">
-                                    <div class="col text-warning">
-                                        <select class="form-control bg-dark text-warning" name="afternoon_start[]">
+                                    <div class="col">
+                                        <select class="form-control  text-warning bg-dark" name="afternoon_start[]">
                                             @for ($i=1; $i<=11; $i++)
-                                                <option  value="{{ $i+12 }}:00"
-                                                    {{ $i.':00 PM' === $workDay->afternoon_start ? 'selected' : '' }}>
+                                                <option value="{{ $i }}:00"
+                                                >
                                                     {{ $i+12 }}:00 PM
                                                 </option>
-                                                <option value="{{ $i+12 }}:30"
-                                                    {{ $i.':30 PM' === $workDay->afternoon_start ? 'selected' : '' }}>
+                                                <option value="{{ $i }}:30"
+                                                >
                                                     {{ $i+12 }}:30 PM
                                                 </option>
                                             @endfor
                                         </select>
                                     </div>
                                     <div class="col">
-                                        <select class="form-control bg-dark text-warning" name="afternoon_end[]">
+                                        <select class="form-control  text-warning bg-dark" name="afternoon_end[]">
                                             @for ($i=1; $i<=11; $i++)
-                                                <option value="{{ $i+12 }}:00"
-                                                    {{ $i.':00 PM' === $workDay->afternoon_end ? 'selected' : '' }}>
+                                                <option value="{{ $i }}:00"
+                                                >
                                                     {{ $i+12 }}:00 PM
                                                 </option>
-                                                <option value=" {{ $i+12 }}:30"
-                                                    {{ $i.':30 PM' === $workDay->afternoon_end ? 'selected' : '' }}>
+                                                <option value=" {{ $i }}:30"
+                                                >
                                                     {{ $i+12 }}:30 PM
                                                 </option>
                                             @endfor
@@ -144,6 +131,8 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+
         </div>
     </form>
 @endsection
