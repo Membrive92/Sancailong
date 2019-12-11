@@ -16,9 +16,9 @@
     </style>
 @endpush
 @section('content')
-    <div class="pl-5 pr-5 text-warning">
-        <div class=" row justify-content-center">
-            <table class="table table-hover table-dark text-warning">
+    <div class=" pl-5 pr-5 ">
+        <div class="row justify-content-center">
+            <table class="table table-hover table-dark text-warning ">
                 <thead>
                 <tr>
                     <th>{{ __("Fecha de la suscripción") }}</th>
@@ -54,4 +54,5 @@
             </table>
         </div>
     </div>
+
     @endsection

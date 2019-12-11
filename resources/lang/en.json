@@ -160,7 +160,12 @@
     "La suscripción se ha cancelado correctamente": "Your subscription has been canceled succesfully",
     "Administrar ahora": "Manage now",
     "Descargar": "Download",
-    "Error en la subida": "uploading failed"
+    "Error en la subida": "uploading failed",
+    "Fecha": "Date",
+    "Mano-vacia": "Hand-void",
+    "Cuchillo": "Knife",
+    "Medicina-China": "Traditional chinese medicine"
+
 
 
 }

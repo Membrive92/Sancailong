@@ -19,19 +19,29 @@ class ProfileController extends Controller
 
         public function update(){
 
-            $picture =Helper::uploadFile( "picture", 'users');
-
-            $this->validate(\request(),[
-                'password' => ['confirmed', new StrengthPassword],
-                'picture' => 'required|image|mimes:jpg,jpeg,png'
-            ]);
 
             $user = auth()->user();
-            $user->password = bcrypt(request('password'));
-            $user->picture = $picture;
-            $user->last_name = \request('name');
-            $user->save();
-            return back()->with('message', ['success', __("Usuario actualizado correctamente")]);
+
+if ($user->picture){
+    $user->password = bcrypt(request('password'));
+    $user->last_name = \request('name');
+    $user->save();
+    return back()->with('message', ['success', __("Usuario actualizado correctamente")]);
+
+} else {
+    $this->validate(\request(),[
+        'password' => ['confirmed', new StrengthPassword],
+        'picture' => 'required|image|mimes:jpg,jpeg,png'
+    ]);
+    $user->password = bcrypt(request('password'));
+    $picture =Helper::uploadFile( "picture", 'users');
+    $user->picture = $picture;
+    $user->last_name = \request('name');
+    $user->save();
+    return back()->with('message', ['success', __("Usuario actualizado correctamente")]);
+}
+
+
 
 
 

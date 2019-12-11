@@ -52,7 +52,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="name">{{'Profesor'}}</label>
+                    <label for="name">{{__('Profesor')}}</label>
                     <input type="text" name="teacher_id" id="teacher" class="form-control" value="{{ old('name') }}" required>
                 </div>
 
