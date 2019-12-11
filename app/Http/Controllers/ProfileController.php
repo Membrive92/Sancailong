@@ -22,24 +22,24 @@ class ProfileController extends Controller
 
             $user = auth()->user();
 
-if ($user->picture){
-    $user->password = bcrypt(request('password'));
-    $user->last_name = \request('name');
-    $user->save();
-    return back()->with('message', ['success', __("Usuario actualizado correctamente")]);
 
-} else {
-    $this->validate(\request(),[
-        'password' => ['confirmed', new StrengthPassword],
-        'picture' => 'required|image|mimes:jpg,jpeg,png'
-    ]);
-    $user->password = bcrypt(request('password'));
-    $picture =Helper::uploadFile( "picture", 'users');
-    $user->picture = $picture;
-    $user->last_name = \request('name');
-    $user->save();
-    return back()->with('message', ['success', __("Usuario actualizado correctamente")]);
-}
+
+            if (request()->hasFile('picture')){
+                $picture =Helper::uploadFile( "picture", 'users');
+                $this->validate(\request(),[
+                    'password' => ['confirmed', new StrengthPassword],
+                    'picture' => 'required|image|mimes:jpg,jpeg,png'
+                ]);
+                $user->picture = $picture;
+
+
+            }
+            $user->password = bcrypt(request('password'));
+
+
+            $user->last_name = \request('name');
+            $user->save();
+            return back()->with('message', ['success', __("Usuario actualizado correctamente")]);
 
 
 
