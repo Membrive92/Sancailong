@@ -45,10 +45,10 @@
                 <table class="table align-items-center table-flush bg-dark text-warning">
                     <thead class="thead-light ">
                     <tr style="font-size: 25px">
-                        <th class="text-warning bg-dark" scope="col">Día</th>
-                        <th class="text-warning bg-dark" scope="col">Activo</th>
-                        <th class="text-warning bg-dark" scope="col">Turno mañana</th>
-                        <th class="text-warning bg-dark"  scope="col">Turno tarde</th>
+                        <th class="text-warning bg-dark" scope="col">{{__('Día')}}</th>
+                        <th class="text-warning bg-dark" scope="col">{{__('Activo')}}</th>
+                        <th class="text-warning bg-dark" scope="col">{{__('Turno mañana')}}</th>
+                        <th class="text-warning bg-dark"  scope="col">{{__('Turno tarde')}}</th>
                     </tr>
                     </thead>
                     <tbody>
