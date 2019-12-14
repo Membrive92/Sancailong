@@ -46,7 +46,6 @@ class CourseRequest extends FormRequest
                         Rule::exists('categories', 'id')
                     ],
                     'picture' => 'required|image|mimes:jpg,jpeg,png',
-                    'url' => 'required|image|mimes:mp4,ogg,wave',
                     'requirements.0' => 'required_with:requirements.1',
                     'goals.0' => 'required_with:goals.1',
                 ];

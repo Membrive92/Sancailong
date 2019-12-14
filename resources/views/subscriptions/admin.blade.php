@@ -34,7 +34,6 @@
                </thead>
                <tbody>
                @forelse($subscriptions as $subscription)
-                   <td>{{ $subscription->id }}</td>
                    <td>{{ $subscription->name }}</td>
                    <td>{{ $subscription->stripe_plan }}</td>
                    <td>{{ $subscription->stripe_id }}</td>

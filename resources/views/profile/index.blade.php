@@ -170,7 +170,7 @@
                             <form action="{{ route('solicitude.teacher') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-outline-dark btn-block text-warning">
-                                    <i class="fa fa-graduation-cap"></i> {{ __("Solicitar") }}
+                                    <i class="fa fa-graduation-cap"></i> {{ __("Ser Profesor") }}
                                 </button>
                             </form>
                         </div>
