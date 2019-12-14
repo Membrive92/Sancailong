@@ -15,26 +15,18 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
 
-    //muestra el componente de vue
-    public function courses(){
+    public function courses () {
         return view('admin.courses');
     }
 
-
-
-
-    public function coursesJson(){
-        if (request()->ajax()){
-
-
-        $vueTables = new EloquentVueTables;
-        $data = $vueTables->get(new Course, ['id','name','status'],['reviews']);
-        return response()->json($data);
+    public function coursesJson () {
+        if(request()->ajax()) {
+            $vueTables = new EloquentVueTables;
+            $data = $vueTables->get(new Course, ['id', 'name', 'status'], ['reviews']);
+            return response()->json($data);
         }
         return abort(401);
     }
-
-
 
     public function updateCourseStatus () {
         if (\request()->ajax()) {
@@ -64,6 +56,7 @@ class AdminController extends Controller
         }
         return abort(401);
     }
+
 
 
 

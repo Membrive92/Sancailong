@@ -14,14 +14,15 @@ Route::get('/set_language/{lang}', 'Controller@setLanguage')->name('set_language
 Route::get('login/{driver}', 'Auth\LoginController@redirectToProvider')->name('social_auth');
 Route::get('login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/password/email','PasswordController@getEmail')->name('password.email');
-Route::post('/password/reset/','PasswordController@postEmail')->name('password.reset');
+
 
 Route::get('/','HomeController@index', function () {
     return view('home', compact('courses'));
 });
-
+Route::get('/password/email','PasswordController@getEmail')->name('password.email');
+Route::post('/password/reset/','PasswordController@postEmail')->name('password.reset');
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -106,9 +107,6 @@ Route::group(['prefix' => "admin", "middleware" => ['auth', sprintf("role:%s", \
     Route::get('/courses_json', 'AdminController@coursesJson')->name('admin.courses_json');
     Route::post('/courses/updateStatus', 'AdminController@updateCourseStatus');
 
-    Route::get('/teachers', 'AdminController@teachers')->name('admin.teachers');
-    Route::get('/teachers_json', 'AdminController@teachersJson')->name('admin.teachers_json');
-    Route::post('/teachers/updateStatus', 'AdminController@updateTeacherStatus');
 });
 
 
