@@ -1,4 +1,15 @@
 @extends('layouts.app')
+@push('styles')
+    <style>
+        body { background-size: cover;
+            background-image: url("{{ asset('/images/scl.jpg')}}");
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+    </style>
+@endpush
 
 @section('content')
 <div class="container">
