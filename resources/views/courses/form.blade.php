@@ -105,6 +105,11 @@
                                 >
                                     {{ __("Escoge una imagen para tu curso") }}
                                 </label>
+                                @if ($errors->has('picture'))
+                                    <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('picture') }}</strong>
+                                        </span>
+                                @endif
                             </div>
                         </div>
                         <div class="form-group ml-3 mr-2">
@@ -120,6 +125,11 @@
                             >
                                 {{ __("Escoge el video del curso") }}
                             </label>
+                            @if ($errors->has('video'))
+                                <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('video') }}</strong>
+                                        </span>
+                            @endif
                         </div>
                     </div>
 

@@ -24,7 +24,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Role extends Model
 {
+    protected $fillable = [
+        'name', 'id', 'description',
+    ];
     const ADMIN = 1;
     const TEACHER = 2;
     const STUDENT = 3;
+
+
 }
